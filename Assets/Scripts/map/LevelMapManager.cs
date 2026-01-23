@@ -11,6 +11,9 @@ public class LevelMapManager : MonoBehaviour
     
     [Header("Délai entre chaque déblocage")]
     public float unlockDelay = 0.3f;
+
+    [Header("Référence au joueur sur la map")]
+public GameObject joueur; // À assigner dans l'inspecteur Unity
     
     void Awake()
     {
@@ -25,11 +28,39 @@ public class LevelMapManager : MonoBehaviour
         if (nodes.Count == 0)
         {
             nodes = FindObjectsByType<LevelNode>(FindObjectsSortMode.None).ToList();
+            PlaceJoueurAuDernierNiveau();
         }
         
         // ✅ NOUVEAU : Vérifier si on revient d'un niveau complété
         CheckForCompletedLevel();
     }
+
+    public void PlaceJoueurAuDernierNiveau()
+{
+    string lastUniqueID = PlayerPrefs.GetString("LastPlayedLevelUniqueID", "");
+    LevelNode nodePourJoueur = null;
+
+    if (!string.IsNullOrEmpty(lastUniqueID))
+    {
+        nodePourJoueur = nodes.FirstOrDefault(n => n.UniqueID == lastUniqueID);
+    }
+
+    // Si pour une raison quelconque l'ID n'est pas dispo, fallback sur l'index comme avant
+    if (nodePourJoueur == null)
+    {
+        int lastPlayed = PlayerPrefs.GetInt("LastPlayedLevelIndex", 0);
+        nodePourJoueur = nodes.FirstOrDefault(n => n.levelIndex == lastPlayed);
+    }
+
+    if (nodePourJoueur != null && joueur != null)
+    {
+        joueur.transform.position = nodePourJoueur.transform.position;
+    }
+    else
+    {
+        Debug.LogWarning($"Emplacement niveau non trouvé, pas de téléportation.");
+    }
+}
     
     // ✅ NOUVELLE MÉTHODE
     private void CheckForCompletedLevel()

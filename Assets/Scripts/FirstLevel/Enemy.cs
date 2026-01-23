@@ -4,12 +4,14 @@ public class Enemy : MonoBehaviour
 {
     [Header("Composants")]
     public SpriteRenderer monRenderer;
+    public EnemyBreathing scriptRespiration;
 
     [Header("Sprites de la Piñata")]
     public Sprite spriteIdle;
     public Sprite spritePrepa;
     public Sprite spriteAttaque;
     public Sprite spriteMal;
+    public Sprite spriteMort;
 
     public void MettreEnAttente()
     {
@@ -32,5 +34,12 @@ public class Enemy : MonoBehaviour
     void ResetPosition()
     {
         transform.position -= Vector3.right * 0.5f;
+    }
+
+    public void Mourir()
+    {
+        monRenderer.sprite = spriteMort;
+
+        if (scriptRespiration != null) scriptRespiration.enabled = false;
     }
 }

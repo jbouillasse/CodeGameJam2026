@@ -45,8 +45,8 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Foreground
-    uniqueID: 926672411
+  - name: sugoi
+    uniqueID: 3846581387
     locked: 0
   m_RenderingLayers:
   - Default

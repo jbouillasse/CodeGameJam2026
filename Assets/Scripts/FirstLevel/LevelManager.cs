@@ -149,6 +149,8 @@ public class LevelManager : MonoBehaviour
         
         if (musiqueDeFond != null) musiqueDeFond.Stop();
 
+        scriptEnnemi.Mourir();
+
         if (bruitagesSource != null && sonVictoire != null)
         {
             bruitagesSource.PlayOneShot(sonVictoire);
