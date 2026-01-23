@@ -18,6 +18,15 @@ public class LevelManager : MonoBehaviour
     [Header("Background")]
     public SpriteRenderer backgroundSprite;
 
+    [Header("Audio")]
+    public AudioSource musiqueDeFond;
+    public AudioSource bruitagesSource;
+    public AudioClip sonVictoire;
+    public AudioClip sonDefaite;
+
+    [Header("UI Tuto")]
+    public GameObject panelTuto;
+
     void Start()
     {
         vieJoueur = vieMax;
@@ -29,7 +38,20 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator BoucleDeJeu()
     {
-        if(backgroundSprite != null)
+        if (panelTuto != null)
+        {
+            panelTuto.SetActive(true);
+
+            while (!Input.GetMouseButtonDown(0))
+            {
+                yield return null;
+            }
+
+            panelTuto.SetActive(false);
+        }
+
+
+        if (backgroundSprite != null)
         {
             backgroundSprite.color = new Color(0.3f, 0.3f, 0.3f, 1f);
         }
@@ -67,19 +89,17 @@ public class LevelManager : MonoBehaviour
             if (scriptMainJoueur.EstChargeAFond())
             {
                 vieEnnemi--;
-                scriptUI.AfficherMessage("BAM ! -1 PV", Color.cyan);
+                scriptUI.AfficherImpact();
 
-                // --- AJOUTE CES 2 LIGNES ICI ---
-                scriptMainJoueur.LancerAnimationClaque(); // Lance le mouvement de la main
-                CameraShake.Instance.Secouer(0.2f, 0.5f); // Fait trembler l'écran
-                // -------------------------------
+                scriptMainJoueur.LancerAnimationClaque();
+                CameraShake.Instance.Secouer(0.2f, 0.5f);
 
                 scriptEnnemi.PrendreUneClaque();
                 scriptMainJoueur.AugmenterRound();
             }
             else
             {
-                scriptUI.AfficherMessage("TROP FAIBLE...", Color.gray);
+                scriptUI.AfficherFeedbackEchec();
             }
 
             scriptUI.UpdateCoeurs(vieJoueur, vieEnnemi);
@@ -87,32 +107,34 @@ public class LevelManager : MonoBehaviour
             if (vieEnnemi <= 0) { Victoire(); break; }
 
             yield return new WaitForSeconds(2f);
-            Debug.Log("--- TOUR ENNEMI ---");
             scriptMainJoueur.ResetState();
 
-            scriptUI.AfficherMessage("ATTENTION...", Color.yellow, 0); // On laisse le texte affiché
-            
+
+            scriptUI.MontrerDodgeIcon();
             float attenteAleatoire = Random.Range(2f, 5f);
             yield return new WaitForSeconds(attenteAleatoire);
 
             scriptEnnemi.PreparerAttaque();
-            scriptUI.AfficherMessage("CLIQUE !!!", Color.red, 0.5f);
+
+            scriptUI.CacherDodgeIcon();
+
+            scriptUI.MontrerDodgeAction();
 
             scriptMainJoueur.peutEsquiver = true;
-            yield return new WaitForSeconds(0.5f); 
-            scriptMainJoueur.peutEsquiver = false; // Trop tard
+            yield return new WaitForSeconds(0.7f); 
+            scriptMainJoueur.peutEsquiver = false;
 
-            // RESOLUTION DEFENSE
+            scriptUI.CacherDodgeAction();
+
             if (scriptMainJoueur.aEsquive)
             {
-                scriptUI.AfficherMessage("ESQUIVÉ !", Color.green);
-                // Animation esquive visuelle (Camera ou autre) ici si tu veux
+                scriptUI.AfficherFeedbackEsquive();
             }
             else
             {
                 vieJoueur--;
-                scriptUI.AfficherMessage("AÏE ! -1 PV", Color.red);
-                // Feedback écran rouge ou tremblement ici
+                scriptUI.AfficherFeedbackMiss();
+                CameraShake.Instance.Secouer(0.3f, 0.5f);
             }
 
             scriptEnnemi.MettreEnAttente();
@@ -127,13 +149,28 @@ public class LevelManager : MonoBehaviour
 
     void Victoire()
     {
-        scriptUI.AfficherMessage("VICTOIRE !", Color.yellow, 0);
+        if (musiqueDeFond != null) musiqueDeFond.Stop();
+
+        if (bruitagesSource != null && sonVictoire != null)
+        {
+            bruitagesSource.PlayOneShot(sonVictoire);
+        }
+
+        scriptUI.AfficherVictoire();
         Debug.Log("GAGNÉ");
     }
 
     void Defaite()
     {
-        scriptUI.AfficherMessage("K.O.", Color.red, 0);
+        if (musiqueDeFond != null) musiqueDeFond.Stop();
+
+        if (bruitagesSource != null && sonDefaite != null)
+        {
+            bruitagesSource.PlayOneShot(sonDefaite);
+        }
+
+        scriptUI.AfficherDefaite();
         Debug.Log("PERDU");
     }
+
 }

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MouseClick
+  m_Name: DodgeIcon
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -357421434760999972, guid: 4a39143a58a00b2409896cfb89396348, type: 3}
-    - time: 0.16666667
-      value: {fileID: 1506059532727745469, guid: 4a39143a58a00b2409896cfb89396348, type: 3}
+      value: {fileID: -4693932192084691647, guid: ac07ebfc57a555f40924bf5b52870a53, type: 3}
     - time: 0.33333334
-      value: {fileID: 1506059532727745469, guid: 4a39143a58a00b2409896cfb89396348, type: 3}
+      value: {fileID: 580201186502188825, guid: ac07ebfc57a555f40924bf5b52870a53, type: 3}
+    - time: 0.6666667
+      value: {fileID: -4693932192084691647, guid: ac07ebfc57a555f40924bf5b52870a53, type: 3}
     attribute: m_Sprite
     path: 
     classID: 114
@@ -48,15 +48,15 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -357421434760999972, guid: 4a39143a58a00b2409896cfb89396348, type: 3}
-    - {fileID: 1506059532727745469, guid: 4a39143a58a00b2409896cfb89396348, type: 3}
-    - {fileID: 1506059532727745469, guid: 4a39143a58a00b2409896cfb89396348, type: 3}
+    - {fileID: -4693932192084691647, guid: ac07ebfc57a555f40924bf5b52870a53, type: 3}
+    - {fileID: 580201186502188825, guid: ac07ebfc57a555f40924bf5b52870a53, type: 3}
+    - {fileID: -4693932192084691647, guid: ac07ebfc57a555f40924bf5b52870a53, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.35000002
+    m_StopTime: 0.68333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

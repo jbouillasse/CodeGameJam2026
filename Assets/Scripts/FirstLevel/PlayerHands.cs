@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Collections; // Indispensable pour l'animation
+using System.Collections;
 
 public class PlayerHands : MonoBehaviour
 {
     [Header("Réglages")]
-    [SerializeField] private int[] clicsNecessaires = new int[] { 15, 20, 25 };
+    [SerializeField] private int[] clicsNecessaires = new int[] { 15, 20, 30 };
 
     [Header("Visuel")]
     [SerializeField] private SpriteRenderer monSpriteRenderer;
@@ -18,13 +18,11 @@ public class PlayerHands : MonoBehaviour
     public bool peutEsquiver = false;
     public bool aEsquive = false;
 
-    // --- VARIABLES POUR L'ANIMATION (NOUVEAU) ---
     private Vector3 posInitiale;
     private Quaternion rotInitiale;
 
     void Start()
     {
-        // On sauvegarde la position exacte de la main au lancement
         posInitiale = transform.localPosition;
         rotInitiale = transform.localRotation;
     }

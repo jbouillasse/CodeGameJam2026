@@ -25,6 +25,24 @@ public class UIManager : MonoBehaviour
     [Header("Animation Spam")]
     public GameObject spamIconObject;
 
+    [Header("Animation Dodge")]
+    public GameObject dodgeIconObject;
+    public GameObject dodgeActionObject;
+
+    [Header("Feedback Esquive")]
+    public GameObject dodgeSuccessObject;
+    public GameObject dodgeMissObject;
+
+    [Header("Feedback Echec")]
+    public GameObject failIconObject;
+
+    [Header("Feedback Touché")]
+    public GameObject hitImpactObject;
+
+    [Header("Ecrans Fin de Jeu")]
+    public GameObject victoryObject;
+    public GameObject gameOverObject;
+
     public void UpdateCoeurs(int vieJoueur, int vieEnnemi)
     {
         for (int i = 0; i < coeursJoueur.Length; i++)
@@ -38,7 +56,6 @@ public class UIManager : MonoBehaviour
             if (i < vieEnnemi) coeursEnnemi[i].sprite = coeurEnnemiPlein;
             else {
                 coeursEnnemi[i].sprite = coeurEnnemiVide;
-                coeursEnnemi[i].color = new Color(0.3f, 0.3f, 0.3f, 1f);
             }
         }
     }
@@ -63,13 +80,16 @@ public class UIManager : MonoBehaviour
 
     public void AfficherImageChiffre(int index)
     {
-        if(imageCompteARebours != null && index < spritesChiffres.Length)
+        if (imageCompteARebours != null && index < spritesChiffres.Length)
         {
+            // On éteint l'objet une fraction de seconde pour reset l'anim
+            imageCompteARebours.gameObject.SetActive(false);
+
             imageCompteARebours.sprite = spritesChiffres[index];
 
-            imageCompteARebours.enabled = true;
-            
-            imageCompteARebours.transform.localScale = Vector3.one; 
+            // On rallume -> Le script JuicyEffect se lance tout seul !
+            imageCompteARebours.gameObject.SetActive(true);
+            imageCompteARebours.color = Color.white;
         }
     }
 
@@ -92,6 +112,18 @@ public class UIManager : MonoBehaviour
         target.localScale = Vector3.one;
     }
 
+    IEnumerator AnimFeedbackEsquive()
+    {
+        if (dodgeSuccessObject != null)
+        {
+            dodgeSuccessObject.SetActive(true);
+
+            yield return new WaitForSeconds(1f);
+
+            dodgeSuccessObject.SetActive(false);
+        }
+    }
+
     public void MontrerSpamIcon()
     {
         // On cache le texte s'il y en avait un
@@ -105,5 +137,105 @@ public class UIManager : MonoBehaviour
     {
         // On désactive l'objet
         if (spamIconObject != null) spamIconObject.SetActive(false);
+    }
+
+    public void MontrerDodgeIcon() // Affiche le bouclier
+    {
+        if (texteCentral != null) texteCentral.text = "";
+        if (dodgeIconObject != null) dodgeIconObject.SetActive(true);
+    }
+
+    public void CacherDodgeIcon() // Cache le bouclier
+    {
+        if (dodgeIconObject != null) dodgeIconObject.SetActive(false);
+    }
+
+    // --- AJOUTE CES DEUX FONCTIONS ---
+    public void MontrerDodgeAction() // Affiche la souris
+    {
+        if (dodgeActionObject != null) dodgeActionObject.SetActive(true);
+    }
+
+    public void CacherDodgeAction() // Cache la souris
+    {
+        if (dodgeActionObject != null) dodgeActionObject.SetActive(false);
+    }
+
+    public void AfficherFeedbackEsquive()
+    {
+        StartCoroutine(AnimFeedbackEsquive());
+    }
+
+    // Miss
+    IEnumerator AnimFeedbackMiss()
+    {
+        if (dodgeMissObject != null)
+        {
+            dodgeMissObject.SetActive(true);
+
+            yield return new WaitForSeconds(1f);
+
+            dodgeMissObject.SetActive(false);
+        }
+    }
+
+    public void AfficherFeedbackMiss()
+    {
+        StartCoroutine(AnimFeedbackMiss());
+    }
+
+    // Feedback Miss Hit
+    public void AfficherFeedbackEchec()
+    {
+        StartCoroutine(AnimFeedbackEchec());
+    }
+
+    IEnumerator AnimFeedbackEchec()
+    {
+        if (failIconObject != null)
+        {
+            failIconObject.SetActive(true);
+
+            yield return new WaitForSeconds(1.5f);
+
+            failIconObject.SetActive(false);
+        }
+    }
+
+    // HIT
+    public void AfficherImpact()
+    {
+        StartCoroutine(AnimImpact());
+    }
+
+    IEnumerator AnimImpact()
+    {
+        if (hitImpactObject != null)
+        {
+            float decalageX = Random.Range(-20f, 20f);
+            float decalageY = Random.Range(-20f, 20f);
+            hitImpactObject.transform.localPosition = new Vector3(decalageX, decalageY, 0);
+
+            hitImpactObject.SetActive(true);
+
+            yield return new WaitForSeconds(0.5f);
+
+            hitImpactObject.SetActive(false);
+        }
+    }
+
+    // WIN / LOSS
+    public void AfficherVictoire()
+    {
+        if (texteCentral != null) texteCentral.text = "";
+
+        if (victoryObject != null) victoryObject.SetActive(true);
+    }
+
+    public void AfficherDefaite()
+    {
+        if (texteCentral != null) texteCentral.text = "";
+
+        if (gameOverObject != null) gameOverObject.SetActive(true);
     }
 }
