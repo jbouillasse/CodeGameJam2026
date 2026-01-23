@@ -1615,11 +1615,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-<<<<<<< HEAD
-  orthographic size: 7
-=======
-  orthographic size: 8
->>>>>>> ab858e927267b82c30fb4bc30a8b89436febed95
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4729,6 +4725,3 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 162176308}
   - {fileID: 94876987}
-  - {fileID: 558434590}
-  - {fileID: 2119251892}
-  - {fileID: 1059480948}
