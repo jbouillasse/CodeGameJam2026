@@ -1,0 +1,831 @@
+fileFormatVersion: 2
+guid: 5783eb3a5e6e4604cb391ad1c0695bba
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4046065640811810189
+    second: EnemyTileSheets_0
+  - first:
+      213: -6105676121978509810
+    second: EnemyTileSheets_1
+  - first:
+      213: -5501944310812964612
+    second: EnemyTileSheets_2
+  - first:
+      213: 2972755021670926660
+    second: EnemyTileSheets_3
+  - first:
+      213: -8339878672034867075
+    second: EnemyTileSheets_4
+  - first:
+      213: -715084831868875460
+    second: EnemyTileSheets_5
+  - first:
+      213: 4224829409102233511
+    second: EnemyTileSheets_6
+  - first:
+      213: 2666439789646912981
+    second: EnemyTileSheets_7
+  - first:
+      213: 671977210016468465
+    second: EnemyTileSheets_8
+  - first:
+      213: -7938181320978502071
+    second: EnemyTileSheets_9
+  - first:
+      213: -8931742789911268575
+    second: EnemyTileSheets_10
+  - first:
+      213: -7908778962662096906
+    second: EnemyTileSheets_11
+  - first:
+      213: -8533047307577760073
+    second: EnemyTileSheets_12
+  - first:
+      213: -3455051760399005033
+    second: EnemyTileSheets_13
+  - first:
+      213: -1034501985999828165
+    second: EnemyTileSheets_14
+  - first:
+      213: 8924583893385686566
+    second: EnemyTileSheets_15
+  - first:
+      213: -3632768456332601684
+    second: EnemyTileSheets_16
+  - first:
+      213: 7152900039938764399
+    second: EnemyTileSheets_17
+  - first:
+      213: 1200501903426569159
+    second: EnemyTileSheets_18
+  - first:
+      213: 499197823901368506
+    second: EnemyTileSheets_19
+  - first:
+      213: 2891724507469716802
+    second: EnemyTileSheets_20
+  - first:
+      213: -506548944986019499
+    second: EnemyTileSheets_21
+  - first:
+      213: -9019935836760665612
+    second: EnemyTileSheets_22
+  - first:
+      213: 3578156478765442490
+    second: EnemyTileSheets_23
+  - first:
+      213: -8775784645697834932
+    second: EnemyTileSheets_24
+  - first:
+      213: 1940323448846820469
+    second: EnemyTileSheets_25
+  - first:
+      213: -5309756018547689166
+    second: EnemyTileSheets_26
+  - first:
+      213: 2444021099200493249
+    second: EnemyTileSheets_27
+  - first:
+      213: -4686235685059762567
+    second: EnemyTileSheets_28
+  - first:
+      213: 1555058087326585531
+    second: EnemyTileSheets_29
+  - first:
+      213: 8325830805187374588
+    second: EnemyTileSheets_30
+  - first:
+      213: 4335924610038022382
+    second: EnemyTileSheets_31
+  - first:
+      213: -7758867109696284592
+    second: EnemyTileSheets_32
+  - first:
+      213: -7545691243142128644
+    second: EnemyTileSheets_33
+  - first:
+      213: -389417468358301053
+    second: EnemyTileSheets_34
+  - first:
+      213: -4669204951266874899
+    second: EnemyTileSheets_35
+  - first:
+      213: -3651694364204386710
+    second: EnemyTileSheets_36
+  - first:
+      213: 5619065629779666574
+    second: EnemyTileSheets_37
+  - first:
+      213: -238276064220108918
+    second: EnemyTileSheets_38
+  - first:
+      213: -6994099364345903301
+    second: EnemyTileSheets_39
+  - first:
+      213: 6047677192716055387
+    second: EnemyTileSheets_40
+  - first:
+      213: -9122446349969780909
+    second: EnemyTileSheets_41
+  - first:
+      213: -6837669368894208907
+    second: EnemyTileSheets_42
+  - first:
+      213: 7174544371929917747
+    second: EnemyTileSheets_43
+  - first:
+      213: 4398387723930554453
+    second: EnemyTileSheets_44
+  - first:
+      213: 4971524627781167860
+    second: EnemyTileSheets_45
+  - first:
+      213: 4506261290786984697
+    second: EnemyTileSheets_46
+  - first:
+      213: -9076425296899788202
+    second: EnemyTileSheets_47
+  - first:
+      213: -4883769966761169596
+    second: EnemyTileSheets_48
+  - first:
+      213: 5702082250348736118
+    second: EnemyTileSheets_49
+  - first:
+      213: -1575098395117488279
+    second: EnemyTileSheets_50
+  - first:
+      213: 8527318096006582395
+    second: EnemyTileSheets_51
+  - first:
+      213: 7403892919335952510
+    second: EnemyTileSheets_52
+  - first:
+      213: -3661034348241098607
+    second: EnemyTileSheets_53
+  - first:
+      213: -1073757552622447504
+    second: EnemyTileSheets_54
+  - first:
+      213: -7251988631442703368
+    second: EnemyTileSheets_55
+  - first:
+      213: -865140581165132945
+    second: EnemyTileSheets_56
+  - first:
+      213: 6808702205139077986
+    second: EnemyTileSheets_57
+  - first:
+      213: 2258249085039485618
+    second: EnemyTileSheets_58
+  - first:
+      213: -1057958560623145534
+    second: EnemyTileSheets_59
+  - first:
+      213: -7315007163818861430
+    second: EnemyTileSheets_60
+  - first:
+      213: 36741825494336298
+    second: EnemyTileSheets_61
+  - first:
+      213: 6419460614558340341
+    second: EnemyTileSheets_62
+  - first:
+      213: 5708464738389931366
+    second: EnemyTileSheets_63
+  - first:
+      213: 8383071273008721645
+    second: EnemyTileSheets_64
+  - first:
+      213: -4734399548450230614
+    second: EnemyTileSheets_65
+  - first:
+      213: 633061243599802254
+    second: EnemyTileSheets_66
+  - first:
+      213: 6046553797268512391
+    second: EnemyTileSheets_67
+  - first:
+      213: -3809350052817084976
+    second: EnemyTileSheets_68
+  - first:
+      213: 5950815542266294820
+    second: EnemyTileSheets_69
+  - first:
+      213: 7136674630986692690
+    second: EnemyTileSheets_70
+  - first:
+      213: 2303657901004262853
+    second: EnemyTileSheets_71
+  - first:
+      213: 4462339965944487577
+    second: EnemyTileSheets_72
+  - first:
+      213: 7015086050967985931
+    second: EnemyTileSheets_73
+  - first:
+      213: -2501754612203274279
+    second: EnemyTileSheets_74
+  - first:
+      213: 3885827237427870189
+    second: EnemyTileSheets_75
+  - first:
+      213: -4536457227370473698
+    second: EnemyTileSheets_76
+  - first:
+      213: -3760825213094338506
+    second: EnemyTileSheets_77
+  - first:
+      213: -3163556017501394446
+    second: EnemyTileSheets_78
+  - first:
+      213: -3945557946743347910
+    second: EnemyTileSheets_79
+  - first:
+      213: 6014099353406713686
+    second: EnemyTileSheets_80
+  - first:
+      213: 4642375095542112050
+    second: EnemyTileSheets_81
+  - first:
+      213: 7071889577684312283
+    second: EnemyTileSheets_82
+  - first:
+      213: -2792316518102808692
+    second: EnemyTileSheets_83
+  - first:
+      213: 7134754590534657160
+    second: EnemyTileSheets_84
+  - first:
+      213: -3359142827468255430
+    second: EnemyTileSheets_85
+  - first:
+      213: -4816036917368792225
+    second: EnemyTileSheets_86
+  - first:
+      213: 1075759313752750460
+    second: EnemyTileSheets_87
+  - first:
+      213: 3375635210983799380
+    second: EnemyTileSheets_88
+  - first:
+      213: -4965150818168135811
+    second: EnemyTileSheets_89
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EnemyTileSheets_1
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 749
+        width: 248
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e06e2e39ae7444ba0800000000000000
+      internalID: -6105676121978509810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTileSheets_3
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 750
+        width: 249
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44944fe11f8514920800000000000000
+      internalID: 2972755021670926660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTileSheets_5
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 750
+        width: 246
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3d8f2452228316f0800000000000000
+      internalID: -715084831868875460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTileSheets_7
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 754
+        width: 245
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dd1fdc7cd8110520800000000000000
+      internalID: 2666439789646912981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTileSheets_9
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 427
+        width: 258
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94e6f68952ae5d190800000000000000
+      internalID: -7938181320978502071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTileSheets_10
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 425
+        width: 276
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 123be2641431c0480800000000000000
+      internalID: -8931742789911268575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTileSheets_11
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 430
+        width: 296
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ff717b9f6f5e3290800000000000000
+      internalID: -7908778962662096906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTileSheets_16
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 157
+        width: 266
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca61d011650d59dc0800000000000000
+      internalID: -3632768456332601684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTileSheets_18
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 157
+        width: 272
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c3cbe1ee1a09a010800000000000000
+      internalID: 1200501903426569159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTileSheets_20
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 176
+        width: 211
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24d16085e18712820800000000000000
+      internalID: 2891724507469716802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTileSheets_46
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 0
+        width: 314
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f2937ec4c4798e30800000000000000
+      internalID: 4506261290786984697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTileSheets_51
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 5
+        width: 187
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b709b3fe0ae175670800000000000000
+      internalID: 8527318096006582395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTileSheets_52
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 4
+        width: 226
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e70ac04f169efb660800000000000000
+      internalID: 7403892919335952510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTileSheets_53
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 2
+        width: 239
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 198e59248a4613dc0800000000000000
+      internalID: -3661034348241098607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTileSheets_54
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 0
+        width: 223
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 074db05e13f3911f0800000000000000
+      internalID: -1073757552622447504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTileSheets_75
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 34
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de9fc61d84b3de530800000000000000
+      internalID: 3885827237427870189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 85d88dff6da3f8843ba8d4239c28c92b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      EnemyTileSheets_0: -4046065640811810189
+      EnemyTileSheets_1: -6105676121978509810
+      EnemyTileSheets_10: -8931742789911268575
+      EnemyTileSheets_11: -7908778962662096906
+      EnemyTileSheets_12: -8533047307577760073
+      EnemyTileSheets_13: -3455051760399005033
+      EnemyTileSheets_14: -1034501985999828165
+      EnemyTileSheets_15: 8924583893385686566
+      EnemyTileSheets_16: -3632768456332601684
+      EnemyTileSheets_17: 7152900039938764399
+      EnemyTileSheets_18: 1200501903426569159
+      EnemyTileSheets_19: 499197823901368506
+      EnemyTileSheets_2: -5501944310812964612
+      EnemyTileSheets_20: 2891724507469716802
+      EnemyTileSheets_21: -506548944986019499
+      EnemyTileSheets_22: -9019935836760665612
+      EnemyTileSheets_23: 3578156478765442490
+      EnemyTileSheets_24: -8775784645697834932
+      EnemyTileSheets_25: 1940323448846820469
+      EnemyTileSheets_26: -5309756018547689166
+      EnemyTileSheets_27: 2444021099200493249
+      EnemyTileSheets_28: -4686235685059762567
+      EnemyTileSheets_29: 1555058087326585531
+      EnemyTileSheets_3: 2972755021670926660
+      EnemyTileSheets_30: 8325830805187374588
+      EnemyTileSheets_31: 4335924610038022382
+      EnemyTileSheets_32: -7758867109696284592
+      EnemyTileSheets_33: -7545691243142128644
+      EnemyTileSheets_34: -389417468358301053
+      EnemyTileSheets_35: -4669204951266874899
+      EnemyTileSheets_36: -3651694364204386710
+      EnemyTileSheets_37: 5619065629779666574
+      EnemyTileSheets_38: -238276064220108918
+      EnemyTileSheets_39: -6994099364345903301
+      EnemyTileSheets_4: -8339878672034867075
+      EnemyTileSheets_40: 6047677192716055387
+      EnemyTileSheets_41: -9122446349969780909
+      EnemyTileSheets_42: -6837669368894208907
+      EnemyTileSheets_43: 7174544371929917747
+      EnemyTileSheets_44: 4398387723930554453
+      EnemyTileSheets_45: 4971524627781167860
+      EnemyTileSheets_46: 4506261290786984697
+      EnemyTileSheets_47: -9076425296899788202
+      EnemyTileSheets_48: -4883769966761169596
+      EnemyTileSheets_49: 5702082250348736118
+      EnemyTileSheets_5: -715084831868875460
+      EnemyTileSheets_50: -1575098395117488279
+      EnemyTileSheets_51: 8527318096006582395
+      EnemyTileSheets_52: 7403892919335952510
+      EnemyTileSheets_53: -3661034348241098607
+      EnemyTileSheets_54: -1073757552622447504
+      EnemyTileSheets_55: -7251988631442703368
+      EnemyTileSheets_56: -865140581165132945
+      EnemyTileSheets_57: 6808702205139077986
+      EnemyTileSheets_58: 2258249085039485618
+      EnemyTileSheets_59: -1057958560623145534
+      EnemyTileSheets_6: 4224829409102233511
+      EnemyTileSheets_60: -7315007163818861430
+      EnemyTileSheets_61: 36741825494336298
+      EnemyTileSheets_62: 6419460614558340341
+      EnemyTileSheets_63: 5708464738389931366
+      EnemyTileSheets_64: 8383071273008721645
+      EnemyTileSheets_65: -4734399548450230614
+      EnemyTileSheets_66: 633061243599802254
+      EnemyTileSheets_67: 6046553797268512391
+      EnemyTileSheets_68: -3809350052817084976
+      EnemyTileSheets_69: 5950815542266294820
+      EnemyTileSheets_7: 2666439789646912981
+      EnemyTileSheets_70: 7136674630986692690
+      EnemyTileSheets_71: 2303657901004262853
+      EnemyTileSheets_72: 4462339965944487577
+      EnemyTileSheets_73: 7015086050967985931
+      EnemyTileSheets_74: -2501754612203274279
+      EnemyTileSheets_75: 3885827237427870189
+      EnemyTileSheets_76: -4536457227370473698
+      EnemyTileSheets_77: -3760825213094338506
+      EnemyTileSheets_78: -3163556017501394446
+      EnemyTileSheets_79: -3945557946743347910
+      EnemyTileSheets_8: 671977210016468465
+      EnemyTileSheets_80: 6014099353406713686
+      EnemyTileSheets_81: 4642375095542112050
+      EnemyTileSheets_82: 7071889577684312283
+      EnemyTileSheets_83: -2792316518102808692
+      EnemyTileSheets_84: 7134754590534657160
+      EnemyTileSheets_85: -3359142827468255430
+      EnemyTileSheets_86: -4816036917368792225
+      EnemyTileSheets_87: 1075759313752750460
+      EnemyTileSheets_88: 3375635210983799380
+      EnemyTileSheets_89: -4965150818168135811
+      EnemyTileSheets_9: -7938181320978502071
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

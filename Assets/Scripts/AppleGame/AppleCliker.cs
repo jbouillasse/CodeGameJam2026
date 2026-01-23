@@ -56,7 +56,7 @@ public class AppleClicker : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
             return Input.mousePosition;
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == UnityEngine.TouchPhase.Began)
             return Input.GetTouch(0).position;
 #endif
         return null;
