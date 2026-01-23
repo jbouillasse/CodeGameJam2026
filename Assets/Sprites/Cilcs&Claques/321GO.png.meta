@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: 33480b0376814314ab40af9649fdac76
+guid: b5ca9c0f3c2e2c949bfaf71c3e3bb96a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7279751689228644814
-    second: HEART ENEMY_0
+      213: -8111599510162113005
+    second: 321GO_0
   - first:
-      213: -1196778787807956847
-    second: HEART ENEMY_1
+      213: 1411330684530046352
+    second: 321GO_1
   - first:
-      213: -8757851026936333643
-    second: HEART ENEMY_2
+      213: -4694164209255460053
+    second: 321GO_2
   - first:
-      213: -1301098720365176229
-    second: HEART ENEMY_3
-  - first:
-      213: 2482154747406402495
-    second: HEART ENEMY_4
-  - first:
-      213: -2997580003573620375
-    second: HEART ENEMY_5
-  - first:
-      213: 8708911667735121156
-    second: HEART ENEMY_6
-  - first:
-      213: -6356105842464118773
-    second: HEART ENEMY_7
+      213: -54651716794596560
+    second: 321GO_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HEART ENEMY_0
+      name: 321GO_0
       rect:
         serializedVersion: 2
-        x: 85
-        y: 617
-        width: 324
-        height: 319
+        x: 60
+        y: 364
+        width: 342
+        height: 332
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ec1f581779fd60560800000000000000
-      internalID: 7279751689228644814
+      spriteID: 31efd8cf83fcd6f80800000000000000
+      internalID: -8111599510162113005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HEART ENEMY_1
+      name: 321GO_1
       rect:
         serializedVersion: 2
-        x: 59
-        y: 239
-        width: 369
-        height: 293
+        x: 413
+        y: 364
+        width: 325
+        height: 325
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 190fbf58800346fe0800000000000000
-      internalID: -1196778787807956847
+      spriteID: 095b500b7cd069310800000000000000
+      internalID: 1411330684530046352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HEART ENEMY_2
+      name: 321GO_2
       rect:
         serializedVersion: 2
-        x: 439
-        y: 612
-        width: 313
-        height: 315
+        x: 749
+        y: 359
+        width: 219
+        height: 345
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ba7baf54ecd57680800000000000000
-      internalID: -8757851026936333643
+      spriteID: b23d9fdb58afadeb0800000000000000
+      internalID: -4694164209255460053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HEART ENEMY_3
+      name: 321GO_3
       rect:
         serializedVersion: 2
-        x: 774
-        y: 617
-        width: 323
-        height: 349
+        x: 970
+        y: 348
+        width: 533
+        height: 387
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,96 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b5a1bea7b9191fde0800000000000000
-      internalID: -1301098720365176229
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HEART ENEMY_4
-      rect:
-        serializedVersion: 2
-        x: 1107
-        y: 629
-        width: 354
-        height: 298
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fb345bc7792627220800000000000000
-      internalID: 2482154747406402495
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HEART ENEMY_5
-      rect:
-        serializedVersion: 2
-        x: 1111
-        y: 1
-        width: 330
-        height: 480
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9612e2d5ed47666d0800000000000000
-      internalID: -2997580003573620375
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HEART ENEMY_6
-      rect:
-        serializedVersion: 2
-        x: 419
-        y: 1
-        width: 333
-        height: 479
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 40d4b9f15054cd870800000000000000
-      internalID: 8708911667735121156
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HEART ENEMY_7
-      rect:
-        serializedVersion: 2
-        x: 767
-        y: 0
-        width: 330
-        height: 480
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b08242199639ac7a0800000000000000
-      internalID: -6356105842464118773
+      spriteID: 033c71a9d86dd3ff0800000000000000
+      internalID: -54651716794596560
       vertices: []
       indices: 
       edges: []
@@ -300,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 97e73e4d44799d04c940b18abbad325b
+    spriteID: 6f9e98448c8ac344e9a24655557ed08e
     internalID: 0
     vertices: []
     indices: 
@@ -310,14 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      HEART ENEMY_0: 7279751689228644814
-      HEART ENEMY_1: -1196778787807956847
-      HEART ENEMY_2: -8757851026936333643
-      HEART ENEMY_3: -1301098720365176229
-      HEART ENEMY_4: 2482154747406402495
-      HEART ENEMY_5: -2997580003573620375
-      HEART ENEMY_6: 8708911667735121156
-      HEART ENEMY_7: -6356105842464118773
+      321GO_0: -8111599510162113005
+      321GO_1: 1411330684530046352
+      321GO_2: -4694164209255460053
+      321GO_3: -54651716794596560
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

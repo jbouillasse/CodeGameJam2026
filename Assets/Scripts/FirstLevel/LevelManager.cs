@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UIElements;
 
 public class LevelManager : MonoBehaviour
 {
@@ -140,7 +139,6 @@ public class LevelManager : MonoBehaviour
             scriptEnnemi.MettreEnAttente();
             scriptUI.UpdateCoeurs(vieJoueur, vieEnnemi);
 
-            // Vérifier Défaite
             if (vieJoueur <= 0) { Defaite(); break; }
 
             yield return new WaitForSeconds(1.5f);
@@ -150,6 +148,8 @@ public class LevelManager : MonoBehaviour
     void Victoire()
     {
         if (musiqueDeFond != null) musiqueDeFond.Stop();
+
+        scriptEnnemi.Mourir();
 
         if (bruitagesSource != null && sonVictoire != null)
         {

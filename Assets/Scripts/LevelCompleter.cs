@@ -5,10 +5,7 @@ public class LevelCompleter : MonoBehaviour
 {
     [Header("Scène de la map")]
     public string mapSceneName = "LevelSelectMap";
-
-    /// <summary>
-    /// Appeler quand le joueur gagne le niveau
-    /// </summary>
+    
     public void WinLevel()
     {
         CompleteCurrentLevel();
@@ -52,10 +49,7 @@ public class LevelCompleter : MonoBehaviour
 
         Debug.Log($"Niveau {currentIndex} complété ! Le niveau {nextLevel} sera débloqué.");
     }
-
-    /// <summary>
-    /// Si le joueur perd ou quitte
-    /// </summary>
+    
     public void ReturnToMap()
     {
         SceneManager.LoadScene(mapSceneName);
