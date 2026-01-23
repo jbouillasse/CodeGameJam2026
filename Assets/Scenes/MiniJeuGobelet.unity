@@ -1128,6 +1128,7 @@ MonoBehaviour:
   - {fileID: 618377906}
   - {fileID: 1013741859}
   - {fileID: 1949773656}
+  currentIndex: 1
   balle: {fileID: 195660141}
   texteAffichage: {fileID: 1028235688}
   sourceAudio: {fileID: 1841840825}

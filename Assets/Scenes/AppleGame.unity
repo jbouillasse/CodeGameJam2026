@@ -394,7 +394,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 926672411
+  m_SortingLayerID: -448385909
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000670fa66cebdb3b2a1be63b37
+  m_ApplyToSortingLayers: 000000008b2c46e5
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1308,7 +1308,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 926672411
+  m_SortingLayerID: -448385909
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
@@ -1617,8 +1617,8 @@ MonoBehaviour:
   roundTimeSeconds: 20
   applesToEat: 10
   sfxSource: {fileID: 1395082404}
-  victoryClip: {fileID: 8300000, guid: e82ab18c7a60127438f58f1bc92e5fca, type: 3}
-  defeatClip: {fileID: 8300000, guid: a9dc90ec2c69bbb47a7af5f660a73ecc, type: 3}
+  victoryClip: {fileID: 8300000, guid: 3fdc1d4dd99ceca4eba5553f970c2132, type: 3}
+  defeatClip: {fileID: 8300000, guid: 25b8ed36f51c2a9439db4e8632fe99cf, type: 3}
   instructionsText: {fileID: 930840628}
   instructionsDuration: 5
   timeText: {fileID: 1765687421}

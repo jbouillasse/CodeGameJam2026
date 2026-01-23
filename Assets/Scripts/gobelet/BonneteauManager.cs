@@ -187,6 +187,9 @@ public class BonneteauManager : MonoBehaviour
                 sourceAudio.volume = 1.0f;
                 sourceAudio.PlayOneShot(sonVictoire);
             }
+
+            // Ajout : marquer le niveau comme complété et préparer le déblocage du suivant
+            CompleteCurrentLevel();
         }
         else
         {
@@ -207,4 +210,29 @@ public class BonneteauManager : MonoBehaviour
     {
         SceneManager.LoadScene("levelSelector");
     }
+
+    // ==== LOGIQUE DE COMPLETION NIVEAU identique AppleGameManager ====
+
+    private void CompleteCurrentLevel()
+    {
+        // Récupérer l'ID du niveau actuel
+        string currentID = PlayerPrefs.GetString("CurrentLevelID", "");
+        int currentIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 1);
+
+        Debug.Log($"=== VICTOIRE niveau {currentIndex} (ID: {currentID}) ===");
+
+        // Marquer comme complété (2 = LevelState.Completed)
+        if (!string.IsNullOrEmpty(currentID))
+        {
+            PlayerPrefs.SetInt($"Level_{currentID}", 2);
+        }
+
+        // Débloquer le niveau suivant
+        // On sauvegarde l'index pour que LevelMapManager débloque au retour
+        PlayerPrefs.SetInt("JustCompletedLevel", currentIndex);
+        PlayerPrefs.Save();
+
+        Debug.Log($"Niveau {currentIndex} complété ! Le niveau {currentIndex + 1} sera débloqué.");
+    }
+    
 }
