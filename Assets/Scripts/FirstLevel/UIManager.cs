@@ -82,13 +82,11 @@ public class UIManager : MonoBehaviour
     {
         if (imageCompteARebours != null && index < spritesChiffres.Length)
         {
-            // On éteint l'objet une fraction de seconde pour reset l'anim
-            imageCompteARebours.gameObject.SetActive(false);
+            imageCompteARebours.enabled = false;
 
             imageCompteARebours.sprite = spritesChiffres[index];
 
-            // On rallume -> Le script JuicyEffect se lance tout seul !
-            imageCompteARebours.gameObject.SetActive(true);
+            imageCompteARebours.enabled = true;
             imageCompteARebours.color = Color.white;
         }
     }
@@ -126,37 +124,33 @@ public class UIManager : MonoBehaviour
 
     public void MontrerSpamIcon()
     {
-        // On cache le texte s'il y en avait un
         if (texteCentral != null) texteCentral.text = "";
 
-        // On active l'objet animé. L'Animator lancera l'anim tout seul.
         if (spamIconObject != null) spamIconObject.SetActive(true);
     }
 
     public void CacherSpamIcon()
     {
-        // On désactive l'objet
         if (spamIconObject != null) spamIconObject.SetActive(false);
     }
 
-    public void MontrerDodgeIcon() // Affiche le bouclier
+    public void MontrerDodgeIcon()
     {
         if (texteCentral != null) texteCentral.text = "";
         if (dodgeIconObject != null) dodgeIconObject.SetActive(true);
     }
 
-    public void CacherDodgeIcon() // Cache le bouclier
+    public void CacherDodgeIcon()
     {
         if (dodgeIconObject != null) dodgeIconObject.SetActive(false);
     }
 
-    // --- AJOUTE CES DEUX FONCTIONS ---
-    public void MontrerDodgeAction() // Affiche la souris
+    public void MontrerDodgeAction()
     {
         if (dodgeActionObject != null) dodgeActionObject.SetActive(true);
     }
 
-    public void CacherDodgeAction() // Cache la souris
+    public void CacherDodgeAction()
     {
         if (dodgeActionObject != null) dodgeActionObject.SetActive(false);
     }
@@ -165,8 +159,6 @@ public class UIManager : MonoBehaviour
     {
         StartCoroutine(AnimFeedbackEsquive());
     }
-
-    // Miss
     IEnumerator AnimFeedbackMiss()
     {
         if (dodgeMissObject != null)
@@ -178,18 +170,14 @@ public class UIManager : MonoBehaviour
             dodgeMissObject.SetActive(false);
         }
     }
-
     public void AfficherFeedbackMiss()
     {
         StartCoroutine(AnimFeedbackMiss());
     }
-
-    // Feedback Miss Hit
     public void AfficherFeedbackEchec()
     {
         StartCoroutine(AnimFeedbackEchec());
     }
-
     IEnumerator AnimFeedbackEchec()
     {
         if (failIconObject != null)
@@ -202,7 +190,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    // HIT
     public void AfficherImpact()
     {
         StartCoroutine(AnimImpact());
@@ -223,8 +210,6 @@ public class UIManager : MonoBehaviour
             hitImpactObject.SetActive(false);
         }
     }
-
-    // WIN / LOSS
     public void AfficherVictoire()
     {
         if (texteCentral != null) texteCentral.text = "";
