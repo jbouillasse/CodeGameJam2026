@@ -9,12 +9,14 @@ public class AppleClicker : MonoBehaviour
     public Sprite[] biteStages;
     public SpriteRenderer spriteRenderer;
     public AppleGameManager gameManager;
+    private AudioSource audioSource;
 
     private int bites;
     private Collider2D col; 
 
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
         ResetApple();
@@ -62,6 +64,9 @@ public class AppleClicker : MonoBehaviour
 
     private void Bite()
     {
+        if (audioSource != null)
+        audioSource.Play();
+
         bites++;
         UpdateStageSprite();
 

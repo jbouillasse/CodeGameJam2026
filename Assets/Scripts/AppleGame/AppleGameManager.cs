@@ -8,6 +8,15 @@ public class AppleGameManager : MonoBehaviour
     public float roundTimeSeconds = 20f;
     public int applesToEat = 10;
 
+    [Header("Audio")]
+    public AudioSource sfxSource;
+    public AudioClip victoryClip;
+    public AudioClip defeatClip;
+
+    [Header("Instructions")]
+    public GameObject instructionsText;
+    public float instructionsDuration = 3f;
+
     [Header("UI")]
     public TMP_Text timeText;
     public TMP_Text scoreText;
@@ -34,7 +43,10 @@ public class AppleGameManager : MonoBehaviour
     {
         timeLeft = roundTimeSeconds;
         applesEaten = 0;
-        IsRunning = true;
+        IsRunning = false;
+        
+        if (sfxSource == null)
+        sfxSource = GetComponent<AudioSource>();
 
         if (victoryPanel != null) victoryPanel.SetActive(false);
         if (defeatPanel != null) defeatPanel.SetActive(false);
@@ -42,8 +54,22 @@ public class AppleGameManager : MonoBehaviour
 
         if (appleObject != null) appleObject.SetActive(true);
 
+        if (instructionsText != null)
+        instructionsText.SetActive(true);
+
         RefreshUI();
+
+        Invoke(nameof(StartGame), instructionsDuration);
     }
+
+    private void StartGame()
+{
+    IsRunning = true;
+
+    if (instructionsText != null)
+        instructionsText.SetActive(false);
+}
+
 
     void Update()
     {
@@ -77,6 +103,16 @@ public class AppleGameManager : MonoBehaviour
         IsRunning = false;
 
         if (appleObject != null) appleObject.SetActive(false);
+
+        if (sfxSource != null)
+{
+        sfxSource.Stop();
+
+        if (win && victoryClip != null)
+        sfxSource.PlayOneShot(victoryClip);
+        else if (!win && defeatClip != null)
+        sfxSource.PlayOneShot(defeatClip);
+}
 
         if (win)
         {
