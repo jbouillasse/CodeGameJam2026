@@ -174,37 +174,61 @@ public class BonneteauManager : MonoBehaviour
     }
 
     void FinDePartie()
+{
+    if (sourceAudio != null) sourceAudio.Stop();
+
+    if (scoreJoueur >= 2)
     {
-        if (sourceAudio != null) sourceAudio.Stop();
+        texteAffichage.text = "VICTOIRE !";
+        texteAffichage.color = Color.yellow;
 
-        if (scoreJoueur >= 2)
+        if (sourceAudio != null && sonVictoire != null)
         {
-            texteAffichage.text = "VICTOIRE !";
-            texteAffichage.color = Color.yellow;
-
-            if (sourceAudio != null && sonVictoire != null)
-            {
-                sourceAudio.volume = 1.0f;
-                sourceAudio.PlayOneShot(sonVictoire);
-            }
+            sourceAudio.volume = 1.0f;
+            sourceAudio.PlayOneShot(sonVictoire);
         }
-        else
-        {
-            texteAffichage.text = "DEFAITE...";
-            texteAffichage.color = Color.grey;
-
-            if (sourceAudio != null && sonDefaite != null)
-            {
-                sourceAudio.volume = 1.0f;
-                sourceAudio.PlayOneShot(sonDefaite);
-            }
-        }
-
-        Invoke("ChargerLevelSelector", 5f);
+        
+        // ✅ NOUVEAU : Compléter le niveau
+        CompleteCurrentLevel();
     }
+    else
+    {
+        texteAffichage.text = "DEFAITE...";
+        texteAffichage.color = Color.grey;
+
+        if (sourceAudio != null && sonDefaite != null)
+        {
+            sourceAudio.volume = 1.0f;
+            sourceAudio.PlayOneShot(sonDefaite);
+        }
+    }
+
+    Invoke("ChargerLevelSelector", 5f);
+}
+
+// ✅ NOUVELLE MÉTHODE : Compléter le niveau et débloquer le suivant
+void CompleteCurrentLevel()
+{
+    string currentID = PlayerPrefs.GetString("CurrentLevelID", "");
+    int currentIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 0);
+    
+    Debug.Log($"=== VICTOIRE niveau {currentIndex} (ID: {currentID}) ===");
+    
+    // Marquer comme complété (2 = LevelState.Completed)
+    if (!string.IsNullOrEmpty(currentID))
+    {
+        PlayerPrefs.SetInt($"Level_{currentID}", 2);
+    }
+    
+    // Sauvegarder pour débloquer le niveau suivant au retour
+    PlayerPrefs.SetInt("JustCompletedLevel", currentIndex);
+    PlayerPrefs.Save();
+    
+    Debug.Log($"Niveau {currentIndex} complété ! Le niveau {currentIndex + 1} sera débloqué.");
+}
 
     void ChargerLevelSelector()
-    {
-        SceneManager.LoadScene("levelSelector");
-    }
+{
+    SceneManager.LoadScene("LevelSelector"); // ← Vérifie la casse !
+}
 }

@@ -88,19 +88,19 @@ public class LevelMapManager : MonoBehaviour
     }
     
     [ContextMenu("Reset Progress")]
-    public void ResetProgress()
-    {
-        foreach (var node in nodes)
-            PlayerPrefs.DeleteKey($"Level_{node.UniqueID}");
-        
-        PlayerPrefs.DeleteKey("CurrentLevelID");
-        PlayerPrefs.DeleteKey("CurrentLevelIndex");
-        PlayerPrefs.DeleteKey("CurrentPathNodeID");
-        PlayerPrefs.DeleteKey("JustCompletedLevel");
-        PlayerPrefs.DeleteKey("DebugLevel");
-        PlayerPrefs.Save();
-        
-        var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
-        UnityEngine.SceneManagement.SceneManager.LoadScene(scene.name);
-    }
+public void ResetProgress()
+{
+    foreach (var node in nodes)
+        PlayerPrefs.DeleteKey($"Level_{node.UniqueID}");
+    
+    PlayerPrefs.DeleteKey("CurrentLevelID");
+    PlayerPrefs.DeleteKey("CurrentLevelIndex");
+    PlayerPrefs.DeleteKey("CurrentPathNodeName");
+    PlayerPrefs.DeleteKey("JustCompletedLevel");
+    PlayerPrefs.DeleteKey("DebugLevel");
+    PlayerPrefs.Save();
+    
+    var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+    UnityEngine.SceneManagement.SceneManager.LoadScene(scene.name);
+}
 }
