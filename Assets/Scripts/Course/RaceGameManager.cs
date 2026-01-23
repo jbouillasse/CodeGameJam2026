@@ -47,6 +47,9 @@ public class RaceGameManager : MonoBehaviour
     public GameObject victoryPanel;
     public GameObject defeatPanel;
     
+    [Header("Tutorial")]
+    public GameObject tutorialPanel;
+    
     [Header("Paramètres")]
     public float countdownTime = 3f;
     public string mapSceneName = "LevelSelectMap";
@@ -73,6 +76,15 @@ public class RaceGameManager : MonoBehaviour
     
     void Start()
     {
+        // Pause le jeu
+        Time.timeScale = 0f;
+        
+        // Affiche le tutoriel
+        if (tutorialPanel != null)
+        {
+            tutorialPanel.SetActive(true);
+        }
+        
         if (victoryPanel != null) victoryPanel.SetActive(false);
         if (defeatPanel != null) defeatPanel.SetActive(false);
         if (comboText != null) comboText.text = "";
@@ -92,7 +104,19 @@ public class RaceGameManager : MonoBehaviour
         
         UpdateUI();
         UpdateClickIndicator();
+    }
+    
+    public void CloseTutorial()
+    {
+        if (tutorialPanel != null)
+        {
+            tutorialPanel.SetActive(false);
+        }
         
+        // Relance le temps
+        Time.timeScale = 1f;
+        
+        // Lance le countdown
         StartCoroutine(Countdown());
     }
     
@@ -265,57 +289,57 @@ public class RaceGameManager : MonoBehaviour
         }
     }
     
-   private IEnumerator EndRaceSequence(bool playerWon)
-{
-    raceEnded = true;
-    
-    Transform winner = playerWon ? player : opponent;
-    Transform loser = playerWon ? opponent : player;
-    
-    Animator loserAnimator = playerWon ? opponentAnimator : playerAnimator;
-    if (loserAnimator != null) loserAnimator.speed = 0f;
-    
-    float winnerTargetX = winExitPositionX;
-    float loserTargetX = behindPositionX;
-    
-    float exitDuration = 1.5f;
-    float elapsed = 0f;
-    
-    float winnerStartX = winner.position.x;
-    float loserStartX = loser.position.x;
-    
-    while (elapsed < exitDuration)
+    private IEnumerator EndRaceSequence(bool playerWon)
     {
-        elapsed += Time.deltaTime;
-        float t = elapsed / exitDuration;
+        raceEnded = true;
         
-        float easedT = 1f - Mathf.Pow(1f - t, 2f);
+        Transform winner = playerWon ? player : opponent;
+        Transform loser = playerWon ? opponent : player;
         
-        float winnerNewX = Mathf.Lerp(winnerStartX, winnerTargetX, easedT);
-        float loserNewX = Mathf.Lerp(loserStartX, loserTargetX, t * 0.5f);
+        Animator loserAnimator = playerWon ? opponentAnimator : playerAnimator;
+        if (loserAnimator != null) loserAnimator.speed = 0f;
         
-        winner.position = new Vector3(winnerNewX, winner.position.y, winner.position.z);
-        loser.position = new Vector3(loserNewX, loser.position.y, loser.position.z);
+        float winnerTargetX = winExitPositionX;
+        float loserTargetX = behindPositionX;
         
-        yield return null;
+        float exitDuration = 1.5f;
+        float elapsed = 0f;
+        
+        float winnerStartX = winner.position.x;
+        float loserStartX = loser.position.x;
+        
+        while (elapsed < exitDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / exitDuration;
+            
+            float easedT = 1f - Mathf.Pow(1f - t, 2f);
+            
+            float winnerNewX = Mathf.Lerp(winnerStartX, winnerTargetX, easedT);
+            float loserNewX = Mathf.Lerp(loserStartX, loserTargetX, t * 0.5f);
+            
+            winner.position = new Vector3(winnerNewX, winner.position.y, winner.position.z);
+            loser.position = new Vector3(loserNewX, loser.position.y, loser.position.z);
+            
+            yield return null;
+        }
+        
+        Animator winnerAnimator = playerWon ? playerAnimator : opponentAnimator;
+        if (winnerAnimator != null) winnerAnimator.speed = 0f;
+        
+        if (playerWon)
+        {
+            if (victoryPanel != null) victoryPanel.SetActive(true);
+            SaveVictory();
+        }
+        else
+        {
+            if (defeatPanel != null) defeatPanel.SetActive(true);
+        }
+        
+        yield return new WaitForSeconds(3f);
+        ReturnToMap();
     }
-    
-    Animator winnerAnimator = playerWon ? playerAnimator : opponentAnimator;
-    if (winnerAnimator != null) winnerAnimator.speed = 0f;
-    
-    if (playerWon)
-    {
-        if (victoryPanel != null) victoryPanel.SetActive(true);
-        SaveVictory();
-    }
-    else
-    {
-        if (defeatPanel != null) defeatPanel.SetActive(true);
-    }
-    
-    yield return new WaitForSeconds(3f);
-    ReturnToMap();
-}
     
     private void SaveVictory()
     {
@@ -358,11 +382,13 @@ public class RaceGameManager : MonoBehaviour
     
     public void RetryRace()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     
     public void ReturnToMap()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(mapSceneName);
     }
     
