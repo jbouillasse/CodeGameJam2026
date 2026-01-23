@@ -2512,6 +2512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClicToGetMoney
   moneyPerClick: 1
+  soundEffect: {fileID: 8300000, guid: 5cd21d29960855b4f98a7669643de8be, type: 3}
 --- !u!114 &1059480947
 MonoBehaviour:
   m_ObjectHideFlags: 0
