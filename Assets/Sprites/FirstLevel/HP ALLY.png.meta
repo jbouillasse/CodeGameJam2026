@@ -1,0 +1,815 @@
+fileFormatVersion: 2
+guid: 609c225af1550854f9e467e65ff869e6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7123191686892914486
+    second: HP ALLY_0
+  - first:
+      213: -6077942176878502773
+    second: HP ALLY_1
+  - first:
+      213: -3243182295222801718
+    second: HP ALLY_2
+  - first:
+      213: 2131211877079336944
+    second: HP ALLY_3
+  - first:
+      213: 8937517350692823752
+    second: HP ALLY_4
+  - first:
+      213: 6616182054738142247
+    second: HP ALLY_5
+  - first:
+      213: 8958420176220104054
+    second: HP ALLY_6
+  - first:
+      213: -1279594284358067260
+    second: HP ALLY_7
+  - first:
+      213: 9052425106217547113
+    second: HP ALLY_8
+  - first:
+      213: 3113944584776669732
+    second: HP ALLY_9
+  - first:
+      213: -2448986027001198748
+    second: HP ALLY_10
+  - first:
+      213: 1138024606468435639
+    second: HP ALLY_11
+  - first:
+      213: -997342432228780597
+    second: HP ALLY_12
+  - first:
+      213: 1619043131649690408
+    second: HP ALLY_13
+  - first:
+      213: 411020364953337341
+    second: HP ALLY_14
+  - first:
+      213: -3348544384773210753
+    second: HP ALLY_15
+  - first:
+      213: 4948765111159193237
+    second: HP ALLY_16
+  - first:
+      213: 1038483401954495472
+    second: HP ALLY_17
+  - first:
+      213: 1970770945666274680
+    second: HP ALLY_18
+  - first:
+      213: 7585060271404391883
+    second: HP ALLY_19
+  - first:
+      213: -1850221558402273138
+    second: HP ALLY_20
+  - first:
+      213: -6746646222994711180
+    second: HP ALLY_21
+  - first:
+      213: 6270018820704569572
+    second: HP ALLY_22
+  - first:
+      213: 965001058937371134
+    second: HP ALLY_23
+  - first:
+      213: 8770617477891848276
+    second: HP ALLY_24
+  - first:
+      213: 964034706098454468
+    second: HP ALLY_25
+  - first:
+      213: -5554317622080151146
+    second: HP ALLY_26
+  - first:
+      213: -521325360774088203
+    second: HP ALLY_27
+  - first:
+      213: 6197828900973275652
+    second: HP ALLY_28
+  - first:
+      213: 6407552129997933163
+    second: HP ALLY_29
+  - first:
+      213: -1176959128616569549
+    second: HP ALLY_30
+  - first:
+      213: -5902611434032483238
+    second: HP ALLY_31
+  - first:
+      213: -8250276858573253345
+    second: HP ALLY_32
+  - first:
+      213: -8238447838032105479
+    second: HP ALLY_33
+  - first:
+      213: -4888983944465204451
+    second: HP ALLY_34
+  - first:
+      213: 5915448076273097113
+    second: HP ALLY_35
+  - first:
+      213: -6447865341986335217
+    second: HP ALLY_36
+  - first:
+      213: 663018999610176006
+    second: HP ALLY_37
+  - first:
+      213: 5946968227404315157
+    second: HP ALLY_38
+  - first:
+      213: 1455974211509875046
+    second: HP ALLY_39
+  - first:
+      213: 8116026340165785087
+    second: HP ALLY_40
+  - first:
+      213: 3446887627968070658
+    second: HP ALLY_41
+  - first:
+      213: 5459942167787789927
+    second: HP ALLY_42
+  - first:
+      213: 4295982664598275744
+    second: HP ALLY_43
+  - first:
+      213: 1164226758410582897
+    second: HP ALLY_44
+  - first:
+      213: -8607986878253828375
+    second: HP ALLY_45
+  - first:
+      213: 2107015701621608963
+    second: HP ALLY_46
+  - first:
+      213: -3129028075950872477
+    second: HP ALLY_47
+  - first:
+      213: 6152069147740307323
+    second: HP ALLY_48
+  - first:
+      213: -5929215692256921705
+    second: HP ALLY_49
+  - first:
+      213: -5507366927567983520
+    second: HP ALLY_50
+  - first:
+      213: 5603470625310118362
+    second: HP ALLY_51
+  - first:
+      213: -4079373486078846339
+    second: HP ALLY_52
+  - first:
+      213: 344906232362886015
+    second: HP ALLY_53
+  - first:
+      213: -6665757070688251863
+    second: HP ALLY_54
+  - first:
+      213: -3498826173849927521
+    second: HP ALLY_55
+  - first:
+      213: 2111646110824440515
+    second: HP ALLY_56
+  - first:
+      213: -8611176095850425144
+    second: HP ALLY_57
+  - first:
+      213: 8837833241843351101
+    second: HP ALLY_58
+  - first:
+      213: -761397747720615560
+    second: HP ALLY_59
+  - first:
+      213: 7406727980488606948
+    second: HP ALLY_60
+  - first:
+      213: 8952015282776643603
+    second: HP ALLY_61
+  - first:
+      213: -7213450032462208148
+    second: HP ALLY_62
+  - first:
+      213: -8102713569842080414
+    second: HP ALLY_63
+  - first:
+      213: -1719309144149071267
+    second: HP ALLY_64
+  - first:
+      213: 6116224773398909902
+    second: HP ALLY_65
+  - first:
+      213: -770399463381136796
+    second: HP ALLY_66
+  - first:
+      213: -8867582647575322054
+    second: HP ALLY_67
+  - first:
+      213: -427505378053769628
+    second: HP ALLY_68
+  - first:
+      213: 2952490170464321567
+    second: HP ALLY_69
+  - first:
+      213: 588973252982329178
+    second: HP ALLY_70
+  - first:
+      213: 865655549953750472
+    second: HP ALLY_71
+  - first:
+      213: -5188554731681466585
+    second: HP ALLY_72
+  - first:
+      213: -5192109927144487133
+    second: HP ALLY_73
+  - first:
+      213: 8974280159490302586
+    second: HP ALLY_74
+  - first:
+      213: -1466471991134255868
+    second: HP ALLY_75
+  - first:
+      213: -5429655684258155911
+    second: HP ALLY_76
+  - first:
+      213: 8630084157008368936
+    second: HP ALLY_77
+  - first:
+      213: -5862389288191522458
+    second: HP ALLY_78
+  - first:
+      213: 7002828181428553199
+    second: HP ALLY_79
+  - first:
+      213: -8248061326619053134
+    second: HP ALLY_80
+  - first:
+      213: 2046606213333398509
+    second: HP ALLY_81
+  - first:
+      213: -2410807935760442217
+    second: HP ALLY_82
+  - first:
+      213: -6684835836557284988
+    second: HP ALLY_83
+  - first:
+      213: -7946182887668094756
+    second: HP ALLY_84
+  - first:
+      213: -7227995369784196021
+    second: HP ALLY_85
+  - first:
+      213: -4094134956063854132
+    second: HP ALLY_86
+  - first:
+      213: -6723880261894114039
+    second: HP ALLY_87
+  - first:
+      213: 6972078174688026058
+    second: HP ALLY_88
+  - first:
+      213: 5144738263684895270
+    second: HP ALLY_89
+  - first:
+      213: -5875057228250570311
+    second: HP ALLY_90
+  - first:
+      213: 6785616450696930055
+    second: HP ALLY_91
+  - first:
+      213: -838038747074023769
+    second: HP ALLY_92
+  - first:
+      213: 7975720522473350473
+    second: HP ALLY_93
+  - first:
+      213: 8507941986656269165
+    second: HP ALLY_94
+  - first:
+      213: -2524059675848481139
+    second: HP ALLY_95
+  - first:
+      213: 6784734568110476728
+    second: HP ALLY_96
+  - first:
+      213: 3704112279609822993
+    second: HP ALLY_97
+  - first:
+      213: -8645811909999928340
+    second: HP ALLY_98
+  - first:
+      213: 7835841053702944235
+    second: HP ALLY_99
+  - first:
+      213: 4391635218612135051
+    second: HP ALLY_100
+  - first:
+      213: -4842114220303141362
+    second: HP ALLY_101
+  - first:
+      213: 394833609238938017
+    second: HP ALLY_102
+  - first:
+      213: -3601570856462693371
+    second: HP ALLY_103
+  - first:
+      213: -2301139199964547998
+    second: HP ALLY_104
+  - first:
+      213: 8604449051389158168
+    second: HP ALLY_105
+  - first:
+      213: 5684377799673898909
+    second: HP ALLY_106
+  - first:
+      213: -7497860919335048158
+    second: HP ALLY_107
+  - first:
+      213: -4085855106034553301
+    second: HP ALLY_108
+  - first:
+      213: -6128952688401239713
+    second: HP ALLY_109
+  - first:
+      213: 6154844512681283935
+    second: HP ALLY_110
+  - first:
+      213: -6648707199929454337
+    second: HP ALLY_111
+  - first:
+      213: -1449393759907515336
+    second: HP ALLY_112
+  - first:
+      213: -5330647134696783010
+    second: HP ALLY_113
+  - first:
+      213: 4998321135069937825
+    second: HP ALLY_114
+  - first:
+      213: -5895233845311442915
+    second: HP ALLY_115
+  - first:
+      213: -7247396905740032913
+    second: HP ALLY_116
+  - first:
+      213: -4743603148311150989
+    second: HP ALLY_117
+  - first:
+      213: -7426450524332015604
+    second: HP ALLY_118
+  - first:
+      213: 359748215926296869
+    second: HP ALLY_119
+  - first:
+      213: -4367552651918450201
+    second: HP ALLY_120
+  - first:
+      213: 8284795965640332092
+    second: HP ALLY_121
+  - first:
+      213: -6307278105499958303
+    second: HP ALLY_122
+  - first:
+      213: -1413838560737864646
+    second: HP ALLY_123
+  - first:
+      213: -3644503888327369857
+    second: HP ALLY_124
+  - first:
+      213: -1613965141182938172
+    second: HP ALLY_125
+  - first:
+      213: -7774793872975696901
+    second: HP ALLY_126
+  - first:
+      213: -6425382626195755052
+    second: HP ALLY_127
+  - first:
+      213: 2970072710577255142
+    second: HP ALLY_128
+  - first:
+      213: -5852672835346045683
+    second: HP ALLY_129
+  - first:
+      213: -7596924032330393736
+    second: HP ALLY_130
+  - first:
+      213: -1352442366289705699
+    second: HP ALLY_131
+  - first:
+      213: 1052826448139538011
+    second: HP ALLY_132
+  - first:
+      213: 8953460763047945917
+    second: HP ALLY_133
+  - first:
+      213: -177453249495092473
+    second: HP ALLY_134
+  - first:
+      213: 829040359717190864
+    second: HP ALLY_135
+  - first:
+      213: 3910299872902971417
+    second: HP ALLY_136
+  - first:
+      213: -2533077962383536543
+    second: HP ALLY_137
+  - first:
+      213: -244722971566419038
+    second: HP ALLY_138
+  - first:
+      213: 9015070558455077698
+    second: HP ALLY_139
+  - first:
+      213: -2114927352473330445
+    second: HP ALLY_140
+  - first:
+      213: -3028199263066122212
+    second: HP ALLY_141
+  - first:
+      213: 4351613857232735163
+    second: HP ALLY_142
+  - first:
+      213: 6792844898090104726
+    second: HP ALLY_143
+  - first:
+      213: -1912007408176398437
+    second: HP ALLY_144
+  - first:
+      213: 828824914976472067
+    second: HP ALLY_145
+  - first:
+      213: 1821053897291703614
+    second: HP ALLY_146
+  - first:
+      213: -4844388488587937952
+    second: HP ALLY_147
+  - first:
+      213: 1835300429652732969
+    second: HP ALLY_148
+  - first:
+      213: 7870150256704026243
+    second: HP ALLY_149
+  - first:
+      213: 1151739625989230651
+    second: HP ALLY_150
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HP ALLY_0
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 633
+        width: 305
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63784445919aad260800000000000000
+      internalID: 7123191686892914486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HP ALLY_1
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 100
+        width: 292
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8cdacddacfc6aba0800000000000000
+      internalID: -6077942176878502773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HP ALLY_93
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 473
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94521d9de837fae60800000000000000
+      internalID: 7975720522473350473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8f87fa64effefbc4baefd6a930321e95
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      - key: SpriteEditor.SliceOnImport
+        value: False
+    nameFileIdTable:
+      HP ALLY_0: 7123191686892914486
+      HP ALLY_1: -6077942176878502773
+      HP ALLY_10: -2448986027001198748
+      HP ALLY_100: 4391635218612135051
+      HP ALLY_101: -4842114220303141362
+      HP ALLY_102: 394833609238938017
+      HP ALLY_103: -3601570856462693371
+      HP ALLY_104: -2301139199964547998
+      HP ALLY_105: 8604449051389158168
+      HP ALLY_106: 5684377799673898909
+      HP ALLY_107: -7497860919335048158
+      HP ALLY_108: -4085855106034553301
+      HP ALLY_109: -6128952688401239713
+      HP ALLY_11: 1138024606468435639
+      HP ALLY_110: 6154844512681283935
+      HP ALLY_111: -6648707199929454337
+      HP ALLY_112: -1449393759907515336
+      HP ALLY_113: -5330647134696783010
+      HP ALLY_114: 4998321135069937825
+      HP ALLY_115: -5895233845311442915
+      HP ALLY_116: -7247396905740032913
+      HP ALLY_117: -4743603148311150989
+      HP ALLY_118: -7426450524332015604
+      HP ALLY_119: 359748215926296869
+      HP ALLY_12: -997342432228780597
+      HP ALLY_120: -4367552651918450201
+      HP ALLY_121: 8284795965640332092
+      HP ALLY_122: -6307278105499958303
+      HP ALLY_123: -1413838560737864646
+      HP ALLY_124: -3644503888327369857
+      HP ALLY_125: -1613965141182938172
+      HP ALLY_126: -7774793872975696901
+      HP ALLY_127: -6425382626195755052
+      HP ALLY_128: 2970072710577255142
+      HP ALLY_129: -5852672835346045683
+      HP ALLY_13: 1619043131649690408
+      HP ALLY_130: -7596924032330393736
+      HP ALLY_131: -1352442366289705699
+      HP ALLY_132: 1052826448139538011
+      HP ALLY_133: 8953460763047945917
+      HP ALLY_134: -177453249495092473
+      HP ALLY_135: 829040359717190864
+      HP ALLY_136: 3910299872902971417
+      HP ALLY_137: -2533077962383536543
+      HP ALLY_138: -244722971566419038
+      HP ALLY_139: 9015070558455077698
+      HP ALLY_14: 411020364953337341
+      HP ALLY_140: -2114927352473330445
+      HP ALLY_141: -3028199263066122212
+      HP ALLY_142: 4351613857232735163
+      HP ALLY_143: 6792844898090104726
+      HP ALLY_144: -1912007408176398437
+      HP ALLY_145: 828824914976472067
+      HP ALLY_146: 1821053897291703614
+      HP ALLY_147: -4844388488587937952
+      HP ALLY_148: 1835300429652732969
+      HP ALLY_149: 7870150256704026243
+      HP ALLY_15: -3348544384773210753
+      HP ALLY_150: 1151739625989230651
+      HP ALLY_151: 545544232
+      HP ALLY_152: -584724470
+      HP ALLY_153: -1516394991
+      HP ALLY_154: -993665835
+      HP ALLY_155: -1578731828
+      HP ALLY_156: 1825242447
+      HP ALLY_157: 1516113287
+      HP ALLY_158: 1352928113
+      HP ALLY_159: -1459011533
+      HP ALLY_16: 4948765111159193237
+      HP ALLY_160: 1889517702
+      HP ALLY_161: -854586021
+      HP ALLY_162: -310874495
+      HP ALLY_163: 2135125124
+      HP ALLY_164: 1462192259
+      HP ALLY_165: 1784576606
+      HP ALLY_166: -2104984347
+      HP ALLY_167: -1225502726
+      HP ALLY_168: -471775614
+      HP ALLY_169: -396408007
+      HP ALLY_17: 1038483401954495472
+      HP ALLY_170: 1839167734
+      HP ALLY_171: 810573661
+      HP ALLY_172: 613963602
+      HP ALLY_173: -1650381097
+      HP ALLY_174: -326332300
+      HP ALLY_18: 1970770945666274680
+      HP ALLY_19: 7585060271404391883
+      HP ALLY_2: -3243182295222801718
+      HP ALLY_20: -1850221558402273138
+      HP ALLY_21: -6746646222994711180
+      HP ALLY_22: 6270018820704569572
+      HP ALLY_23: 965001058937371134
+      HP ALLY_24: 8770617477891848276
+      HP ALLY_25: 964034706098454468
+      HP ALLY_26: -5554317622080151146
+      HP ALLY_27: -521325360774088203
+      HP ALLY_28: 6197828900973275652
+      HP ALLY_29: 6407552129997933163
+      HP ALLY_3: 2131211877079336944
+      HP ALLY_30: -1176959128616569549
+      HP ALLY_31: -5902611434032483238
+      HP ALLY_32: -8250276858573253345
+      HP ALLY_33: -8238447838032105479
+      HP ALLY_34: -4888983944465204451
+      HP ALLY_35: 5915448076273097113
+      HP ALLY_36: -6447865341986335217
+      HP ALLY_37: 663018999610176006
+      HP ALLY_38: 5946968227404315157
+      HP ALLY_39: 1455974211509875046
+      HP ALLY_4: 8937517350692823752
+      HP ALLY_40: 8116026340165785087
+      HP ALLY_41: 3446887627968070658
+      HP ALLY_42: 5459942167787789927
+      HP ALLY_43: 4295982664598275744
+      HP ALLY_44: 1164226758410582897
+      HP ALLY_45: -8607986878253828375
+      HP ALLY_46: 2107015701621608963
+      HP ALLY_47: -3129028075950872477
+      HP ALLY_48: 6152069147740307323
+      HP ALLY_49: -5929215692256921705
+      HP ALLY_5: 6616182054738142247
+      HP ALLY_50: -5507366927567983520
+      HP ALLY_51: 5603470625310118362
+      HP ALLY_52: -4079373486078846339
+      HP ALLY_53: 344906232362886015
+      HP ALLY_54: -6665757070688251863
+      HP ALLY_55: -3498826173849927521
+      HP ALLY_56: 2111646110824440515
+      HP ALLY_57: -8611176095850425144
+      HP ALLY_58: 8837833241843351101
+      HP ALLY_59: -761397747720615560
+      HP ALLY_6: 8958420176220104054
+      HP ALLY_60: 7406727980488606948
+      HP ALLY_61: 8952015282776643603
+      HP ALLY_62: -7213450032462208148
+      HP ALLY_63: -8102713569842080414
+      HP ALLY_64: -1719309144149071267
+      HP ALLY_65: 6116224773398909902
+      HP ALLY_66: -770399463381136796
+      HP ALLY_67: -8867582647575322054
+      HP ALLY_68: -427505378053769628
+      HP ALLY_69: 2952490170464321567
+      HP ALLY_7: -1279594284358067260
+      HP ALLY_70: 588973252982329178
+      HP ALLY_71: 865655549953750472
+      HP ALLY_72: -5188554731681466585
+      HP ALLY_73: -5192109927144487133
+      HP ALLY_74: 8974280159490302586
+      HP ALLY_75: -1466471991134255868
+      HP ALLY_76: -5429655684258155911
+      HP ALLY_77: 8630084157008368936
+      HP ALLY_78: -5862389288191522458
+      HP ALLY_79: 7002828181428553199
+      HP ALLY_8: 9052425106217547113
+      HP ALLY_80: -8248061326619053134
+      HP ALLY_81: 2046606213333398509
+      HP ALLY_82: -2410807935760442217
+      HP ALLY_83: -6684835836557284988
+      HP ALLY_84: -7946182887668094756
+      HP ALLY_85: -7227995369784196021
+      HP ALLY_86: -4094134956063854132
+      HP ALLY_87: -6723880261894114039
+      HP ALLY_88: 6972078174688026058
+      HP ALLY_89: 5144738263684895270
+      HP ALLY_9: 3113944584776669732
+      HP ALLY_90: -5875057228250570311
+      HP ALLY_91: 6785616450696930055
+      HP ALLY_92: -838038747074023769
+      HP ALLY_93: 7975720522473350473
+      HP ALLY_94: 8507941986656269165
+      HP ALLY_95: -2524059675848481139
+      HP ALLY_96: 6784734568110476728
+      HP ALLY_97: 3704112279609822993
+      HP ALLY_98: -8645811909999928340
+      HP ALLY_99: 7835841053702944235
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

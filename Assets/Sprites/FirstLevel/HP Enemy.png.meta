@@ -1,28 +1,31 @@
 fileFormatVersion: 2
-guid: 89a3a49a543206c4796aea8332bb66b4
+guid: d121e653287dfd24bb6f349a4790128c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4869519991378987429
-    second: TileSheetsHands2_0
+      213: 7237839282895946394
+    second: HP Enemy_0
   - first:
-      213: -1833964998148836666
-    second: TileSheetsHands2_1
+      213: 97570464018929675
+    second: HP Enemy_1
   - first:
-      213: -6713891206216960959
-    second: TileSheetsHands2_2
+      213: 6006426698380045080
+    second: HP Enemy_2
   - first:
-      213: 7040024863903037593
-    second: TileSheetsHands2_3
+      213: 2398204458798923659
+    second: HP Enemy_3
   - first:
-      213: 43077755981202786
-    second: TileSheetsHands2_4
+      213: -4411658957350918613
+    second: HP Enemy_4
   - first:
-      213: -738612422042687311
-    second: TileSheetsHands2_5
+      213: 6874337910221560965
+    second: HP Enemy_5
   - first:
-      213: -8551150973308996772
-    second: TileSheetsHands2_6
+      213: -1515430804098931260
+    second: HP Enemy_6
+  - first:
+      213: -860005969244224474
+    second: HP Enemy_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -118,111 +121,177 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TileSheetsHands2_2
+      name: HP Enemy_0
       rect:
         serializedVersion: 2
-        x: 393
-        y: 295
-        width: 333
-        height: 486
-      alignment: 9
-      pivot: {x: 0.79902697, y: 0.07342837}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 144b1d8058773d2a0800000000000000
-      internalID: -6713891206216960959
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileSheetsHands2_3
-      rect:
-        serializedVersion: 2
-        x: 823
-        y: 263
-        width: 324
-        height: 547
-      alignment: 9
-      pivot: {x: 0.81237113, y: 0.1150299}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 998bbd6605133b160800000000000000
-      internalID: 7040024863903037593
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileSheetsHands2_4
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 300
-        width: 295
-        height: 493
-      alignment: 9
-      pivot: {x: 0.809878, y: 0.0563071}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2650bf6adfa099000800000000000000
-      internalID: 43077755981202786
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileSheetsHands2_8
-      rect:
-        serializedVersion: 2
-        x: 1234
-        y: 289
-        width: 302
-        height: 512
-      alignment: 9
-      pivot: {x: 0.8026956, y: 0.088713646}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1be7d53f7cc9914a81e881c52076e99
-      internalID: -1507775876
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileSheetsHands2_13
-      rect:
-        serializedVersion: 2
-        x: 1426
-        y: 320
-        width: 5
-        height: 4
+        x: 137
+        y: 544
+        width: 278
+        height: 334
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 80704b9755d9c134bb9ffdf15ca5ba7c
-      internalID: -168799361
+      spriteID: a928166ea78f17460800000000000000
+      internalID: 7237839282895946394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HP Enemy_1
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 529
+        width: 263
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b081b60f1d3aa5100800000000000000
+      internalID: 97570464018929675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HP Enemy_2
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 536
+        width: 268
+        height: 344
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81b6d5e324d1b5350800000000000000
+      internalID: 6006426698380045080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HP Enemy_3
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 547
+        width: 283
+        height: 309
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8fb771cf32284120800000000000000
+      internalID: 2398204458798923659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HP Enemy_4
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 145
+        width: 279
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b26ade06d83a6c2c0800000000000000
+      internalID: -4411658957350918613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HP Enemy_5
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 162
+        width: 278
+        height: 313
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58cd1c458ed866f50800000000000000
+      internalID: 6874337910221560965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HP Enemy_6
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 178
+        width: 296
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c5aff776bb18fae0800000000000000
+      internalID: -1515430804098931260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HP Enemy_7
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 160
+        width: 281
+        height: 315
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6248b72a025a014f0800000000000000
+      internalID: -860005969244224474
       vertices: []
       indices: 
       edges: []
@@ -231,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f86f25ecb761a8c4bb5f59f983b32d4f
+    spriteID: db51752ee5e4d2f4c8ea819e67f2df62
     internalID: 0
     vertices: []
     indices: 
@@ -243,23 +312,14 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      TileSheetsHands2_0: 4869519991378987429
-      TileSheetsHands2_1: -1833964998148836666
-      TileSheetsHands2_10: -947706777
-      TileSheetsHands2_11: -201661170
-      TileSheetsHands2_12: 267680130
-      TileSheetsHands2_13: -168799361
-      TileSheetsHands2_14: -638481543
-      TileSheetsHands2_15: 1454986252
-      TileSheetsHands2_16: 307170313
-      TileSheetsHands2_2: -6713891206216960959
-      TileSheetsHands2_3: 7040024863903037593
-      TileSheetsHands2_4: 43077755981202786
-      TileSheetsHands2_5: -738612422042687311
-      TileSheetsHands2_6: -8551150973308996772
-      TileSheetsHands2_7: -235189906
-      TileSheetsHands2_8: -1507775876
-      TileSheetsHands2_9: -1613747303
+      HP Enemy_0: 7237839282895946394
+      HP Enemy_1: 97570464018929675
+      HP Enemy_2: 6006426698380045080
+      HP Enemy_3: 2398204458798923659
+      HP Enemy_4: -4411658957350918613
+      HP Enemy_5: 6874337910221560965
+      HP Enemy_6: -1515430804098931260
+      HP Enemy_7: -860005969244224474
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,58 +1,139 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UIElements;
 
 public class LevelManager : MonoBehaviour
 {
     [Header("Liens")]
     public PlayerHands scriptMainJoueur;
-    public DodgeCamera scriptCamera;
     public Enemy scriptEnnemi;
+    public UIManager scriptUI;
 
-    [Header("Equilibrage")]
-    public int pointsDeVieEnnemi = 100;
-    public float dureeCharge = 10f;
-    public float dureeReflexe = 1f;
+    [Header("Paramètres")]
+    public int vieMax = 3;
+    private int vieJoueur;
+    private int vieEnnemi;
+    private bool jeuFini = false;
 
-    private bool combatEnCours = true;
+    [Header("Background")]
+    public SpriteRenderer backgroundSprite;
 
     void Start()
     {
-        StartCoroutine(BoucleDeCombat());
+        vieJoueur = vieMax;
+        vieEnnemi = vieMax;
+        scriptUI.UpdateCoeurs(vieJoueur, vieEnnemi);
+        
+        StartCoroutine(BoucleDeJeu());
     }
 
-    IEnumerator BoucleDeCombat()
+    IEnumerator BoucleDeJeu()
     {
-        while (combatEnCours && pointsDeVieEnnemi > 0)
+        if(backgroundSprite != null)
         {
-            Debug.Log("--- CHARGEZ !!! ---");
+            backgroundSprite.color = new Color(0.3f, 0.3f, 0.3f, 1f);
+        }
+
+        yield return new WaitForSeconds(0.5f);
+        
+        scriptUI.AfficherImageChiffre(0);
+        yield return new WaitForSeconds(1f);
+        
+        scriptUI.AfficherImageChiffre(1);
+        yield return new WaitForSeconds(1f);
+        
+        scriptUI.AfficherImageChiffre(2);
+        yield return new WaitForSeconds(1f);
+        
+        scriptUI.AfficherImageChiffre(3);
+        yield return new WaitForSeconds(1.5f);
+        
+        scriptUI.CacherImageChiffre();
+
+        while (!jeuFini)
+        {
+            scriptMainJoueur.ResetState();
             scriptEnnemi.MettreEnAttente();
-            yield return new WaitForSeconds(dureeCharge);
 
-            Debug.Log("--- ATTENTION ESQUIVE !!! ---");
-            scriptEnnemi.PreparerAttaque();
-            yield return new WaitForSeconds(dureeReflexe);
+            scriptUI.MontrerSpamIcon();
+
+            scriptMainJoueur.peutSpammer = true;
+            yield return new WaitForSeconds(3.5f);
             
-            bool esquiveReussie = Mathf.Abs(scriptCamera.transform.localPosition.x) > 0.5f;
+            scriptMainJoueur.peutSpammer = false;
 
-            if (esquiveReussie)
+            scriptUI.CacherSpamIcon();
+
+            if (scriptMainJoueur.EstChargeAFond())
             {
-                float degats = scriptMainJoueur.GetForceDeLaClaque();
-                pointsDeVieEnnemi -= (int)degats;
-                Debug.Log("BAM ! Dégâts : " + degats + ". Vie restante : " + pointsDeVieEnnemi);
-                
-                scriptEnnemi.PrendreUneClaque();
+                vieEnnemi--;
+                scriptUI.AfficherMessage("BAM ! -1 PV", Color.cyan);
 
-                scriptMainJoueur.AugmenterDifficulte();
+                // --- AJOUTE CES 2 LIGNES ICI ---
+                scriptMainJoueur.LancerAnimationClaque(); // Lance le mouvement de la main
+                CameraShake.Instance.Secouer(0.2f, 0.5f); // Fait trembler l'écran
+                // -------------------------------
+
+                scriptEnnemi.PrendreUneClaque();
+                scriptMainJoueur.AugmenterRound();
             }
             else
             {
-                Debug.Log("AIE ! Tu t'es pris une gifle !");
-                scriptMainJoueur.ResetCharge();
+                scriptUI.AfficherMessage("TROP FAIBLE...", Color.gray);
             }
 
-            yield return new WaitForSeconds(1f);
-        }
+            scriptUI.UpdateCoeurs(vieJoueur, vieEnnemi);
 
-        Debug.Log("COMBAT TERMINE !");
+            if (vieEnnemi <= 0) { Victoire(); break; }
+
+            yield return new WaitForSeconds(2f);
+            Debug.Log("--- TOUR ENNEMI ---");
+            scriptMainJoueur.ResetState();
+
+            scriptUI.AfficherMessage("ATTENTION...", Color.yellow, 0); // On laisse le texte affiché
+            
+            float attenteAleatoire = Random.Range(2f, 5f);
+            yield return new WaitForSeconds(attenteAleatoire);
+
+            scriptEnnemi.PreparerAttaque();
+            scriptUI.AfficherMessage("CLIQUE !!!", Color.red, 0.5f);
+
+            scriptMainJoueur.peutEsquiver = true;
+            yield return new WaitForSeconds(0.5f); 
+            scriptMainJoueur.peutEsquiver = false; // Trop tard
+
+            // RESOLUTION DEFENSE
+            if (scriptMainJoueur.aEsquive)
+            {
+                scriptUI.AfficherMessage("ESQUIVÉ !", Color.green);
+                // Animation esquive visuelle (Camera ou autre) ici si tu veux
+            }
+            else
+            {
+                vieJoueur--;
+                scriptUI.AfficherMessage("AÏE ! -1 PV", Color.red);
+                // Feedback écran rouge ou tremblement ici
+            }
+
+            scriptEnnemi.MettreEnAttente();
+            scriptUI.UpdateCoeurs(vieJoueur, vieEnnemi);
+
+            // Vérifier Défaite
+            if (vieJoueur <= 0) { Defaite(); break; }
+
+            yield return new WaitForSeconds(1.5f);
+        }
+    }
+
+    void Victoire()
+    {
+        scriptUI.AfficherMessage("VICTOIRE !", Color.yellow, 0);
+        Debug.Log("GAGNÉ");
+    }
+
+    void Defaite()
+    {
+        scriptUI.AfficherMessage("K.O.", Color.red, 0);
+        Debug.Log("PERDU");
     }
 }

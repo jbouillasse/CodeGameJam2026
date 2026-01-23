@@ -1,28 +1,85 @@
 fileFormatVersion: 2
-guid: 89a3a49a543206c4796aea8332bb66b4
+guid: 57a82a84703e4a94c96726bdd5cac38a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4869519991378987429
-    second: TileSheetsHands2_0
+      213: 9153997472239449030
+    second: INFOS_0
   - first:
-      213: -1833964998148836666
-    second: TileSheetsHands2_1
+      213: -518903797301143335
+    second: INFOS_1
   - first:
-      213: -6713891206216960959
-    second: TileSheetsHands2_2
+      213: -696422417674998615
+    second: INFOS_2
   - first:
-      213: 7040024863903037593
-    second: TileSheetsHands2_3
+      213: 8264296137894579802
+    second: INFOS_3
   - first:
-      213: 43077755981202786
-    second: TileSheetsHands2_4
+      213: -2181650444144558735
+    second: INFOS_4
   - first:
-      213: -738612422042687311
-    second: TileSheetsHands2_5
+      213: 1412499679931720158
+    second: INFOS_5
   - first:
-      213: -8551150973308996772
-    second: TileSheetsHands2_6
+      213: -2759697202858665898
+    second: INFOS_6
+  - first:
+      213: 2636499500227932843
+    second: INFOS_7
+  - first:
+      213: -5567812215426543969
+    second: INFOS_8
+  - first:
+      213: 7908705238563085922
+    second: INFOS_9
+  - first:
+      213: 8324907590815543947
+    second: INFOS_10
+  - first:
+      213: 402031261261067128
+    second: INFOS_11
+  - first:
+      213: -5936321894726344690
+    second: INFOS_12
+  - first:
+      213: -4484952730359214730
+    second: INFOS_13
+  - first:
+      213: -8504869861823507397
+    second: INFOS_14
+  - first:
+      213: 6161397136657936045
+    second: INFOS_15
+  - first:
+      213: -6842749524272893673
+    second: INFOS_16
+  - first:
+      213: -1190228547906256744
+    second: INFOS_17
+  - first:
+      213: 4573104650224104651
+    second: INFOS_18
+  - first:
+      213: -9204860372338031717
+    second: INFOS_19
+  - first:
+      213: -4446321160186322073
+    second: INFOS_20
+  - first:
+      213: 8947208477970278607
+    second: INFOS_21
+  - first:
+      213: -3658392079412415729
+    second: INFOS_22
+  - first:
+      213: 7908093271952669940
+    second: INFOS_23
+  - first:
+      213: 1133392664951237653
+    second: INFOS_24
+  - first:
+      213: 1242473318461740518
+    second: INFOS_25
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -118,111 +175,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TileSheetsHands2_2
+      name: INFOS_0
       rect:
         serializedVersion: 2
-        x: 393
-        y: 295
-        width: 333
-        height: 486
-      alignment: 9
-      pivot: {x: 0.79902697, y: 0.07342837}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 144b1d8058773d2a0800000000000000
-      internalID: -6713891206216960959
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileSheetsHands2_3
-      rect:
-        serializedVersion: 2
-        x: 823
-        y: 263
-        width: 324
-        height: 547
-      alignment: 9
-      pivot: {x: 0.81237113, y: 0.1150299}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 998bbd6605133b160800000000000000
-      internalID: 7040024863903037593
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileSheetsHands2_4
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 300
-        width: 295
-        height: 493
-      alignment: 9
-      pivot: {x: 0.809878, y: 0.0563071}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2650bf6adfa099000800000000000000
-      internalID: 43077755981202786
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileSheetsHands2_8
-      rect:
-        serializedVersion: 2
-        x: 1234
-        y: 289
-        width: 302
-        height: 512
-      alignment: 9
-      pivot: {x: 0.8026956, y: 0.088713646}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1be7d53f7cc9914a81e881c52076e99
-      internalID: -1507775876
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileSheetsHands2_13
-      rect:
-        serializedVersion: 2
-        x: 1426
-        y: 320
-        width: 5
-        height: 4
+        x: 310
+        y: 692
+        width: 834
+        height: 297
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 80704b9755d9c134bb9ffdf15ca5ba7c
-      internalID: -168799361
+      spriteID: 6c3f7a77338890f70800000000000000
+      internalID: 9153997472239449030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INFOS_1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 399
+        width: 793
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d89341eebb7cc8f0800000000000000
+      internalID: -518903797301143335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INFOS_2
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 59
+        width: 943
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9acecdc308fc556f0800000000000000
+      internalID: -696422417674998615
       vertices: []
       indices: 
       edges: []
@@ -231,7 +244,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f86f25ecb761a8c4bb5f59f983b32d4f
+    spriteID: 2c06e4c1441b15e43b66cb267816e637
     internalID: 0
     vertices: []
     indices: 
@@ -239,27 +252,34 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      TileSheetsHands2_0: 4869519991378987429
-      TileSheetsHands2_1: -1833964998148836666
-      TileSheetsHands2_10: -947706777
-      TileSheetsHands2_11: -201661170
-      TileSheetsHands2_12: 267680130
-      TileSheetsHands2_13: -168799361
-      TileSheetsHands2_14: -638481543
-      TileSheetsHands2_15: 1454986252
-      TileSheetsHands2_16: 307170313
-      TileSheetsHands2_2: -6713891206216960959
-      TileSheetsHands2_3: 7040024863903037593
-      TileSheetsHands2_4: 43077755981202786
-      TileSheetsHands2_5: -738612422042687311
-      TileSheetsHands2_6: -8551150973308996772
-      TileSheetsHands2_7: -235189906
-      TileSheetsHands2_8: -1507775876
-      TileSheetsHands2_9: -1613747303
+      INFOS_0: 9153997472239449030
+      INFOS_1: -518903797301143335
+      INFOS_10: 8324907590815543947
+      INFOS_11: 402031261261067128
+      INFOS_12: -5936321894726344690
+      INFOS_13: -4484952730359214730
+      INFOS_14: -8504869861823507397
+      INFOS_15: 6161397136657936045
+      INFOS_16: -6842749524272893673
+      INFOS_17: -1190228547906256744
+      INFOS_18: 4573104650224104651
+      INFOS_19: -9204860372338031717
+      INFOS_2: -696422417674998615
+      INFOS_20: -4446321160186322073
+      INFOS_21: 8947208477970278607
+      INFOS_22: -3658392079412415729
+      INFOS_23: 7908093271952669940
+      INFOS_24: 1133392664951237653
+      INFOS_25: 1242473318461740518
+      INFOS_3: 8264296137894579802
+      INFOS_4: -2181650444144558735
+      INFOS_5: 1412499679931720158
+      INFOS_6: -2759697202858665898
+      INFOS_7: 2636499500227932843
+      INFOS_8: -5567812215426543969
+      INFOS_9: 7908705238563085922
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

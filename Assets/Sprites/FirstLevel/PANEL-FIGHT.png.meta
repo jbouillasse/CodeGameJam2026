@@ -1,28 +1,73 @@
 fileFormatVersion: 2
-guid: 89a3a49a543206c4796aea8332bb66b4
+guid: bc21232e5bacf51488fe745041fd12f8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4869519991378987429
-    second: TileSheetsHands2_0
+      213: -8192225441397209315
+    second: PANEL-FIGHT_0
   - first:
-      213: -1833964998148836666
-    second: TileSheetsHands2_1
+      213: -5490039171885693187
+    second: PANEL-FIGHT_1
   - first:
-      213: -6713891206216960959
-    second: TileSheetsHands2_2
+      213: -2562862860449065510
+    second: PANEL-FIGHT_2
   - first:
-      213: 7040024863903037593
-    second: TileSheetsHands2_3
+      213: -1888887925273641216
+    second: PANEL-FIGHT_3
   - first:
-      213: 43077755981202786
-    second: TileSheetsHands2_4
+      213: 6679799338725463848
+    second: PANEL-FIGHT_4
   - first:
-      213: -738612422042687311
-    second: TileSheetsHands2_5
+      213: -928978864211916339
+    second: PANEL-FIGHT_5
   - first:
-      213: -8551150973308996772
-    second: TileSheetsHands2_6
+      213: 2613822820956263944
+    second: PANEL-FIGHT_6
+  - first:
+      213: -34897143870738586
+    second: PANEL-FIGHT_7
+  - first:
+      213: -3170832364655107510
+    second: PANEL-FIGHT_8
+  - first:
+      213: -382372076974736423
+    second: PANEL-FIGHT_9
+  - first:
+      213: 332306735206061381
+    second: PANEL-FIGHT_10
+  - first:
+      213: -1666662320485661277
+    second: PANEL-FIGHT_11
+  - first:
+      213: 5277090958022702731
+    second: PANEL-FIGHT_12
+  - first:
+      213: 8609512027758577327
+    second: PANEL-FIGHT_13
+  - first:
+      213: -1207384548521959211
+    second: PANEL-FIGHT_14
+  - first:
+      213: 2641569010483654528
+    second: PANEL-FIGHT_15
+  - first:
+      213: -1872135608022026540
+    second: PANEL-FIGHT_16
+  - first:
+      213: -9136991019659896867
+    second: PANEL-FIGHT_17
+  - first:
+      213: 4312608915107271647
+    second: PANEL-FIGHT_18
+  - first:
+      213: -5413756020647364340
+    second: PANEL-FIGHT_19
+  - first:
+      213: 7994780374677827425
+    second: PANEL-FIGHT_20
+  - first:
+      213: 6314779757537324273
+    second: PANEL-FIGHT_21
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -118,111 +163,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TileSheetsHands2_2
+      name: PANEL-FIGHT_0
       rect:
         serializedVersion: 2
-        x: 393
-        y: 295
-        width: 333
-        height: 486
-      alignment: 9
-      pivot: {x: 0.79902697, y: 0.07342837}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 144b1d8058773d2a0800000000000000
-      internalID: -6713891206216960959
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileSheetsHands2_3
-      rect:
-        serializedVersion: 2
-        x: 823
-        y: 263
-        width: 324
-        height: 547
-      alignment: 9
-      pivot: {x: 0.81237113, y: 0.1150299}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 998bbd6605133b160800000000000000
-      internalID: 7040024863903037593
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileSheetsHands2_4
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 300
-        width: 295
-        height: 493
-      alignment: 9
-      pivot: {x: 0.809878, y: 0.0563071}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2650bf6adfa099000800000000000000
-      internalID: 43077755981202786
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileSheetsHands2_8
-      rect:
-        serializedVersion: 2
-        x: 1234
-        y: 289
-        width: 302
-        height: 512
-      alignment: 9
-      pivot: {x: 0.8026956, y: 0.088713646}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1be7d53f7cc9914a81e881c52076e99
-      internalID: -1507775876
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileSheetsHands2_13
-      rect:
-        serializedVersion: 2
-        x: 1426
-        y: 320
-        width: 5
-        height: 4
+        x: 162
+        y: 1143
+        width: 661
+        height: 393
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 80704b9755d9c134bb9ffdf15ca5ba7c
-      internalID: -168799361
+      spriteID: d170a958d5e5f4e80800000000000000
+      internalID: -8192225441397209315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PANEL-FIGHT_1
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 841
+        width: 689
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df606cce5767fc3b0800000000000000
+      internalID: -5490039171885693187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PANEL-FIGHT_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 515
+        width: 729
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad554ea9ec1ee6cd0800000000000000
+      internalID: -2562862860449065510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PANEL-FIGHT_3
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 154
+        width: 729
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00f3a81907259c5e0800000000000000
+      internalID: -1888887925273641216
       vertices: []
       indices: 
       edges: []
@@ -231,7 +254,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f86f25ecb761a8c4bb5f59f983b32d4f
+    spriteID: 4e70265044272e44d821dab027f153f6
     internalID: 0
     vertices: []
     indices: 
@@ -239,27 +262,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      TileSheetsHands2_0: 4869519991378987429
-      TileSheetsHands2_1: -1833964998148836666
-      TileSheetsHands2_10: -947706777
-      TileSheetsHands2_11: -201661170
-      TileSheetsHands2_12: 267680130
-      TileSheetsHands2_13: -168799361
-      TileSheetsHands2_14: -638481543
-      TileSheetsHands2_15: 1454986252
-      TileSheetsHands2_16: 307170313
-      TileSheetsHands2_2: -6713891206216960959
-      TileSheetsHands2_3: 7040024863903037593
-      TileSheetsHands2_4: 43077755981202786
-      TileSheetsHands2_5: -738612422042687311
-      TileSheetsHands2_6: -8551150973308996772
-      TileSheetsHands2_7: -235189906
-      TileSheetsHands2_8: -1507775876
-      TileSheetsHands2_9: -1613747303
+      PANEL-FIGHT_0: -8192225441397209315
+      PANEL-FIGHT_1: -5490039171885693187
+      PANEL-FIGHT_10: 332306735206061381
+      PANEL-FIGHT_11: -1666662320485661277
+      PANEL-FIGHT_12: 5277090958022702731
+      PANEL-FIGHT_13: 8609512027758577327
+      PANEL-FIGHT_14: -1207384548521959211
+      PANEL-FIGHT_15: 2641569010483654528
+      PANEL-FIGHT_16: -1872135608022026540
+      PANEL-FIGHT_17: -9136991019659896867
+      PANEL-FIGHT_18: 4312608915107271647
+      PANEL-FIGHT_19: -5413756020647364340
+      PANEL-FIGHT_2: -2562862860449065510
+      PANEL-FIGHT_20: 7994780374677827425
+      PANEL-FIGHT_21: 6314779757537324273
+      PANEL-FIGHT_3: -1888887925273641216
+      PANEL-FIGHT_4: 6679799338725463848
+      PANEL-FIGHT_5: -928978864211916339
+      PANEL-FIGHT_6: 2613822820956263944
+      PANEL-FIGHT_7: -34897143870738586
+      PANEL-FIGHT_8: -3170832364655107510
+      PANEL-FIGHT_9: -382372076974736423
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
