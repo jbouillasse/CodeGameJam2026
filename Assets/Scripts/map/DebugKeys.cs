@@ -25,11 +25,17 @@ public class DebugKeys : MonoBehaviour
             }
         }
         
-        // R = reset tout (y compris position personnage)
+        // R = reset tout (y compris position personnage, qui sera replacé sur le node 0)
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
             debugIndex = 0;
             PlayerPrefs.DeleteKey("CurrentPathNodeID");
+            
+            // On force le personnage à réapparaître sur le node 0 au prochain lancement de la map
+            PlayerPrefs.SetInt("LastPlayedLevelIndex", 0);         // ← Pour le placement par index
+            PlayerPrefs.SetString("LastPlayedLevelUniqueID", "");  // ← (Optionnel) Pour forcer le fallback index si tu relances sans ID spécifique
+            PlayerPrefs.Save();
+
             LevelMapManager.Instance?.ResetProgress();
         }
     }

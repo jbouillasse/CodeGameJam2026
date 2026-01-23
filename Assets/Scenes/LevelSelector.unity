@@ -1616,7 +1616,11 @@ Camera:
   field of view: 34
   orthographic: 1
   orthographic size: 6
+<<<<<<< HEAD
+  m_Depth: -1
+=======
   m_Depth: 0
+>>>>>>> c43e54c79551ed12be91ff2a6487995ba1a8b589
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2106,6 +2110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelMapManager
   nodes: []
   unlockDelay: 0.5
+  joueur: {fileID: 1800087693}
 --- !u!4 &608079236
 Transform:
   m_ObjectHideFlags: 0
