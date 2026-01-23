@@ -28,13 +28,8 @@ public class LevelMapManager : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// Complète un niveau et débloque TOUS les niveaux avec l'index suivant
-    /// </summary>
     public void CompleteLevel(int levelIndex)
     {
-        // Marquer comme complété tous les niveaux avec cet index qui sont "Unlocked"
-        // (au cas où il y a 4 et 4-bis, on complète seulement celui joué)
         string currentID = PlayerPrefs.GetString("CurrentLevelID", "");
         
         foreach (var node in nodes)
@@ -46,7 +41,6 @@ public class LevelMapManager : MonoBehaviour
             }
         }
         
-        // Débloquer TOUS les niveaux avec l'index suivant
         int nextIndex = levelIndex + 1;
         StartCoroutine(UnlockAllWithIndex(nextIndex));
     }
@@ -62,9 +56,6 @@ public class LevelMapManager : MonoBehaviour
         }
     }
     
-    /// <summary>
-    /// Récupère tous les nodes avec un index donné
-    /// </summary>
     public List<LevelNode> GetNodesWithIndex(int index)
     {
         return nodes.Where(n => n.levelIndex == index).ToList();
@@ -78,6 +69,7 @@ public class LevelMapManager : MonoBehaviour
         
         PlayerPrefs.DeleteKey("CurrentLevelID");
         PlayerPrefs.DeleteKey("CurrentLevelIndex");
+        PlayerPrefs.DeleteKey("CurrentPathNodeID");
         PlayerPrefs.DeleteKey("DebugLevel");
         PlayerPrefs.Save();
         

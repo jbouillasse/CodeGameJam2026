@@ -14,8 +14,11 @@ public enum LevelState
 public class LevelNode : MonoBehaviour
 {
     [Header("Configuration")]
-    public int levelIndex; // 0, 1, 1, 2, 2, 3... (les bis ont le même index)
+    public int levelIndex;
     public string sceneName;
+    
+    [Header("Mode Test (pas de mini-jeu)")]
+    public bool simulateWin = true; // Active la simulation de victoire
     
     [Header("Sprites")]
     public Sprite lockedSprite;
@@ -40,7 +43,6 @@ public class LevelNode : MonoBehaviour
     private Camera mainCam;
     private bool isHovered = false;
     
-    // ID unique pour la sauvegarde (pour différencier 4 et 4-bis)
     public string UniqueID => $"{levelIndex}_{gameObject.name}";
     
     void Awake()
@@ -101,17 +103,37 @@ public class LevelNode : MonoBehaviour
             return;
         }
         
+        // Demander au personnage de se déplacer vers ce niveau
+        if (MapCharacter.Instance != null)
+        {
+            MapCharacter.Instance.MoveToLevel(this);
+        }
+        else
+        {
+            // Fallback si pas de personnage
+            LaunchLevel();
+        }
+    }
+    
+    public void LaunchLevel()
+    {
         Debug.Log($"Lancement niveau {levelIndex}");
         onClicked?.Invoke();
         
-        // Sauvegarder l'ID unique du niveau actuel
         PlayerPrefs.SetString("CurrentLevelID", UniqueID);
         PlayerPrefs.SetInt("CurrentLevelIndex", levelIndex);
+        PlayerPrefs.Save();
         
-        if (!string.IsNullOrEmpty(sceneName))
+        // Mode simulation : compléter directement sans charger de scène
+        if (simulateWin || string.IsNullOrEmpty(sceneName))
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+            Debug.Log($"=== SIMULATION VICTOIRE niveau {levelIndex} ===");
+            LevelMapManager.Instance?.CompleteLevel(levelIndex);
+            return;
         }
+        
+        // Mode normal : charger la scène du mini-jeu
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
     
     public void SetState(LevelState newState, bool animate = true)
@@ -225,7 +247,6 @@ public class LevelNode : MonoBehaviour
         int saved = PlayerPrefs.GetInt($"Level_{UniqueID}", 0);
         state = (LevelState)saved;
         
-        // Niveau index 0 toujours débloqué par défaut
         if (levelIndex == 0 && state == LevelState.Locked)
             state = LevelState.Unlocked;
     }

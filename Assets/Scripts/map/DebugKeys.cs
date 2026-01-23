@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class DebugKeys : MonoBehaviour
 {
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     private int debugIndex = 0;
     
     void Update()
@@ -11,11 +11,9 @@ public class DebugKeys : MonoBehaviour
         // Espace = compléter le niveau actuel
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            // Simule qu'on a joué un niveau avec cet index
             var nodes = LevelMapManager.Instance?.GetNodesWithIndex(debugIndex);
             if (nodes != null && nodes.Count > 0)
             {
-                // Prend le premier unlocked
                 var node = nodes.Find(n => n.GetState() == LevelState.Unlocked);
                 if (node != null)
                 {
@@ -27,12 +25,13 @@ public class DebugKeys : MonoBehaviour
             }
         }
         
-        // R = reset tout
+        // R = reset tout (y compris position personnage)
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
             debugIndex = 0;
+            PlayerPrefs.DeleteKey("CurrentPathNodeID");
             LevelMapManager.Instance?.ResetProgress();
         }
     }
-    #endif
+#endif
 }
