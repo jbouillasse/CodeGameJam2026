@@ -52,9 +52,7 @@ public class RaceGameManager : MonoBehaviour
     
     [Header("Paramètres")]
     public float countdownTime = 3f;
-    public string mapSceneName = "LevelSelectMap";
     
-    // État du jeu
     private bool raceStarted = false;
     private bool raceEnded = false;
     private bool expectLeftClick = true;
@@ -62,10 +60,8 @@ public class RaceGameManager : MonoBehaviour
     private float timeRemaining;
     private float lastClickTime = 0f;
     
-    // Combo
     private int combo = 0;
     
-    // Positions X cibles
     private float playerTargetX;
     private float opponentTargetX;
     
@@ -76,10 +72,8 @@ public class RaceGameManager : MonoBehaviour
     
     void Start()
     {
-        // Pause le jeu
         Time.timeScale = 0f;
         
-        // Affiche le tutoriel
         if (tutorialPanel != null)
         {
             tutorialPanel.SetActive(true);
@@ -113,10 +107,7 @@ public class RaceGameManager : MonoBehaviour
             tutorialPanel.SetActive(false);
         }
         
-        // Relance le temps
         Time.timeScale = 1f;
-        
-        // Lance le countdown
         StartCoroutine(Countdown());
     }
     
@@ -219,21 +210,13 @@ public class RaceGameManager : MonoBehaviour
     {
         if (player != null)
         {
-            float newX = Mathf.Lerp(
-                player.position.x,
-                playerTargetX,
-                positionLerpSpeed * Time.deltaTime
-            );
+            float newX = Mathf.Lerp(player.position.x, playerTargetX, positionLerpSpeed * Time.deltaTime);
             player.position = new Vector3(newX, player.position.y, player.position.z);
         }
         
         if (opponent != null)
         {
-            float newX = Mathf.Lerp(
-                opponent.position.x,
-                opponentTargetX,
-                positionLerpSpeed * Time.deltaTime
-            );
+            float newX = Mathf.Lerp(opponent.position.x, opponentTargetX, positionLerpSpeed * Time.deltaTime);
             opponent.position = new Vector3(newX, opponent.position.y, opponent.position.z);
         }
     }
@@ -270,13 +253,9 @@ public class RaceGameManager : MonoBehaviour
         if (clickIndicator != null)
         {
             if (expectLeftClick)
-            {
                 clickIndicator.sprite = souris1;
-            }
             else
-            {
                 clickIndicator.sprite = souris2;
-            }
         }
     }
     
@@ -343,14 +322,20 @@ public class RaceGameManager : MonoBehaviour
     
     private void SaveVictory()
     {
-        string levelID = PlayerPrefs.GetString("CurrentLevelID", "");
-        if (!string.IsNullOrEmpty(levelID))
+        string currentID = PlayerPrefs.GetString("CurrentLevelID", "");
+        int currentIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 0);
+        
+        Debug.Log($"=== VICTOIRE niveau {currentIndex} (ID: {currentID}) ===");
+        
+        if (!string.IsNullOrEmpty(currentID))
         {
-            PlayerPrefs.SetInt($"Level_{levelID}", 2);
-            int levelIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 0);
-            PlayerPrefs.SetInt("LastCompletedIndex", levelIndex);
-            PlayerPrefs.Save();
+            PlayerPrefs.SetInt($"Level_{currentID}", 2);
         }
+        
+        PlayerPrefs.SetInt("JustCompletedLevel", currentIndex);
+        PlayerPrefs.Save();
+        
+        Debug.Log($"Niveau {currentIndex} complété ! Le niveau {currentIndex + 1} sera débloqué.");
     }
     
     private IEnumerator Countdown()
@@ -389,7 +374,7 @@ public class RaceGameManager : MonoBehaviour
     public void ReturnToMap()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(mapSceneName);
+        SceneManager.LoadScene("LevelSelector");
     }
     
     public float GetPlayerSpeed()
