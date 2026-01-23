@@ -98,37 +98,60 @@ public class AppleGameManager : MonoBehaviour
     }
 
     private void EndGame(bool win)
-    {
-        if (!IsRunning) return;
-        IsRunning = false;
-
-        if (appleObject != null) appleObject.SetActive(false);
-
-        if (sfxSource != null)
 {
+    if (!IsRunning) return;
+    IsRunning = false;
+
+    if (appleObject != null) appleObject.SetActive(false);
+
+    if (sfxSource != null)
+    {
         sfxSource.Stop();
 
         if (win && victoryClip != null)
-        sfxSource.PlayOneShot(victoryClip);
+            sfxSource.PlayOneShot(victoryClip);
         else if (!win && defeatClip != null)
-        sfxSource.PlayOneShot(defeatClip);
+            sfxSource.PlayOneShot(defeatClip);
+    }
+
+    if (win)
+    {
+        if (victoryPanel != null) victoryPanel.SetActive(true);
+        if (coresPile != null) coresPile.SetActive(true);
+        
+        // ✅ NOUVEAU : Marquer le niveau comme complété
+        CompleteCurrentLevel();
+    }
+    else
+    {
+        if (defeatPanel != null) defeatPanel.SetActive(true);
+    }
+
+    Invoke(nameof(ReturnToLevelSelector), returnDelaySeconds);
 }
 
-        if (win)
-        {
-            if (victoryPanel != null) victoryPanel.SetActive(true);
-            if (coresPile != null) coresPile.SetActive(true);
-        }
-        else
-        {
-            if (defeatPanel != null) defeatPanel.SetActive(true);
-
-            PlayerPrefs.SetInt(unlockedKey, firstLevelValue);
-            PlayerPrefs.Save();
-        }
-
-        Invoke(nameof(ReturnToLevelSelector), returnDelaySeconds);
+// ✅ NOUVELLE MÉTHODE : Compléter le niveau et débloquer le suivant
+private void CompleteCurrentLevel()
+{
+    // Récupérer l'ID du niveau actuel
+    string currentID = PlayerPrefs.GetString("CurrentLevelID", "");
+    int currentIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 0);
+    
+    Debug.Log($"=== VICTOIRE niveau {currentIndex} (ID: {currentID}) ===");
+    
+    // Marquer comme complété (2 = LevelState.Completed)
+    if (!string.IsNullOrEmpty(currentID))
+    {
+        PlayerPrefs.SetInt($"Level_{currentID}", 2);
     }
+    
+    // Débloquer le niveau suivant
+    // On sauvegarde l'index pour que LevelMapManager débloque au retour
+    PlayerPrefs.SetInt("JustCompletedLevel", currentIndex);
+    PlayerPrefs.Save();
+    
+    Debug.Log($"Niveau {currentIndex} complété ! Le niveau {currentIndex + 1} sera débloqué.");
+}
 
     private void ReturnToLevelSelector()
     {

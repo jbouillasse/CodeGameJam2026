@@ -26,6 +26,27 @@ public class LevelMapManager : MonoBehaviour
         {
             nodes = FindObjectsByType<LevelNode>(FindObjectsSortMode.None).ToList();
         }
+        
+        // ✅ NOUVEAU : Vérifier si on revient d'un niveau complété
+        CheckForCompletedLevel();
+    }
+    
+    // ✅ NOUVELLE MÉTHODE
+    private void CheckForCompletedLevel()
+    {
+        int justCompleted = PlayerPrefs.GetInt("JustCompletedLevel", -1);
+        
+        if (justCompleted >= 0)
+        {
+            Debug.Log($"Retour de victoire ! Déblocage du niveau {justCompleted + 1}");
+            
+            // Effacer le flag
+            PlayerPrefs.DeleteKey("JustCompletedLevel");
+            PlayerPrefs.Save();
+            
+            // Débloquer le niveau suivant
+            StartCoroutine(UnlockAllWithIndex(justCompleted + 1));
+        }
     }
     
     public void CompleteLevel(int levelIndex)
@@ -47,12 +68,17 @@ public class LevelMapManager : MonoBehaviour
     
     private System.Collections.IEnumerator UnlockAllWithIndex(int index)
     {
+        yield return new WaitForSeconds(0.5f); // Petit délai pour que tout soit chargé
+        
         var nodesToUnlock = nodes.Where(n => n.levelIndex == index && n.GetState() == LevelState.Locked).ToList();
+        
+        Debug.Log($"Déblocage de {nodesToUnlock.Count} niveau(x) avec index {index}");
         
         foreach (var node in nodesToUnlock)
         {
             yield return new WaitForSeconds(unlockDelay);
             node.Unlock();
+            Debug.Log($"Niveau débloqué : {node.name}");
         }
     }
     
@@ -70,6 +96,7 @@ public class LevelMapManager : MonoBehaviour
         PlayerPrefs.DeleteKey("CurrentLevelID");
         PlayerPrefs.DeleteKey("CurrentLevelIndex");
         PlayerPrefs.DeleteKey("CurrentPathNodeID");
+        PlayerPrefs.DeleteKey("JustCompletedLevel");
         PlayerPrefs.DeleteKey("DebugLevel");
         PlayerPrefs.Save();
         

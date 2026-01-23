@@ -18,7 +18,7 @@ public class LevelNode : MonoBehaviour
     public string sceneName;
     
     [Header("Mode Test (pas de mini-jeu)")]
-    public bool simulateWin = true; // Active la simulation de victoire
+    public bool simulateWin = false;
     
     [Header("Sprites")]
     public Sprite lockedSprite;
@@ -77,6 +77,7 @@ public class LevelNode : MonoBehaviour
         bool wasHovered = isHovered;
         isHovered = col.OverlapPoint(worldPos);
         
+        // Hover effect seulement si jouable (Unlocked ou Completed)
         if (isHovered && !wasHovered)
         {
             if (state != LevelState.Locked)
@@ -103,14 +104,13 @@ public class LevelNode : MonoBehaviour
             return;
         }
         
-        // Demander au personnage de se déplacer vers ce niveau
+        // Unlocked OU Completed = on peut jouer
         if (MapCharacter.Instance != null)
         {
             MapCharacter.Instance.MoveToLevel(this);
         }
         else
         {
-            // Fallback si pas de personnage
             LaunchLevel();
         }
     }
@@ -124,7 +124,6 @@ public class LevelNode : MonoBehaviour
         PlayerPrefs.SetInt("CurrentLevelIndex", levelIndex);
         PlayerPrefs.Save();
         
-        // Mode simulation : compléter directement sans charger de scène
         if (simulateWin || string.IsNullOrEmpty(sceneName))
         {
             Debug.Log($"=== SIMULATION VICTOIRE niveau {levelIndex} ===");
@@ -132,7 +131,7 @@ public class LevelNode : MonoBehaviour
             return;
         }
         
-        // Mode normal : charger la scène du mini-jeu
+        Debug.Log($"=== CHARGEMENT SCENE: {sceneName} ===");
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
     
@@ -180,7 +179,11 @@ public class LevelNode : MonoBehaviour
                 break;
                 
             case LevelState.Completed:
+                // ✅ Sprite CACHÉ mais collider reste actif !
                 sr.enabled = false;
+                currentTargetScale = baseScale * unlockedSpriteScale;
+                transform.localScale = currentTargetScale;
+                // Le collider reste actif donc on peut toujours cliquer
                 break;
         }
     }
