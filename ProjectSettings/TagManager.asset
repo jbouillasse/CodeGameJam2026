@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Pomme
+  - Canette
   layers:
   - Default
   - TransparentFX
