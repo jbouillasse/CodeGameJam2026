@@ -605,8 +605,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelNode
   levelIndex: 1
-  sceneName: 
-  simulateWin: 1
+  sceneName: MiniJeuGobelet
+  simulateWin: 0
   lockedSprite: {fileID: 2053423597429031267, guid: af5a07c3031f7fd4c96cb124c8b0aef1, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 9932448ddf798074d871099b476d3534, type: 3}
   lockedSpriteScale: 1
@@ -1616,20 +1616,23 @@ Camera:
   field of view: 34
   orthographic: 1
   orthographic size: 6
-
+<<<<<<< HEAD
   m_Depth: -1
+=======
+  m_Depth: 0
+>>>>>>> c43e54c79551ed12be91ff2a6487995ba1a8b589
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 0
+  m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 0
+  m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 0
+  m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &519420032
@@ -2107,6 +2110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelMapManager
   nodes: []
   unlockDelay: 0.5
+  joueur: {fileID: 1800087693}
 --- !u!4 &608079236
 Transform:
   m_ObjectHideFlags: 0

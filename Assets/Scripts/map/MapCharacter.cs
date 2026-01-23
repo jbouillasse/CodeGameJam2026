@@ -33,11 +33,50 @@ public class MapCharacter : MonoBehaviour
     
     void Start()
     {
-        // NE RIEN FAIRE AU START - on garde la position de l'éditeur
+        // ✅ NOUVEAU : Charger la position sauvegardée
+        LoadPosition();
+    }
+    
+    // ✅ NOUVELLE MÉTHODE : Charger la position sauvegardée
+    private void LoadPosition()
+    {
+        string savedNodeName = PlayerPrefs.GetString("CurrentPathNodeName", "");
+        
+        if (!string.IsNullOrEmpty(savedNodeName))
+        {
+            // Chercher le PathNode sauvegardé
+            var allPathNodes = FindObjectsByType<PathNode>(FindObjectsSortMode.None);
+            PathNode savedNode = allPathNodes.FirstOrDefault(pn => pn.gameObject.name == savedNodeName);
+            
+            if (savedNode != null)
+            {
+                currentNode = savedNode;
+                transform.position = new Vector3(
+                    savedNode.transform.position.x,
+                    savedNode.transform.position.y,
+                    transform.position.z
+                );
+                Debug.Log($"MapCharacter chargé sur {savedNodeName}");
+                return;
+            }
+        }
+        
+        // Fallback : position de départ
         if (startNode != null)
         {
             currentNode = startNode;
             Debug.Log($"MapCharacter prêt sur {startNode.name}");
+        }
+    }
+    
+    // ✅ NOUVELLE MÉTHODE : Sauvegarder la position
+    private void SavePosition()
+    {
+        if (currentNode != null)
+        {
+            PlayerPrefs.SetString("CurrentPathNodeName", currentNode.gameObject.name);
+            PlayerPrefs.Save();
+            Debug.Log($"Position sauvegardée : {currentNode.gameObject.name}");
         }
     }
     
@@ -91,6 +130,9 @@ public class MapCharacter : MonoBehaviour
         
         SetWalking(false);
         isMoving = false;
+        
+        // ✅ NOUVEAU : Sauvegarder la position avant de lancer le niveau
+        SavePosition();
         
         yield return new WaitForSeconds(0.2f);
         destinationLevel.LaunchLevel();

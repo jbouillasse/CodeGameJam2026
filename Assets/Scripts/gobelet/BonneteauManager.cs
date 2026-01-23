@@ -187,6 +187,9 @@ public class BonneteauManager : MonoBehaviour
                 sourceAudio.volume = 1.0f;
                 sourceAudio.PlayOneShot(sonVictoire);
             }
+
+            // ✅ NOUVEAU : Compléter le niveau
+            CompleteCurrentLevel();
         }
         else
         {
@@ -203,8 +206,29 @@ public class BonneteauManager : MonoBehaviour
         Invoke("ChargerLevelSelector", 5f);
     }
 
+    // ✅ NOUVELLE MÉTHODE : Compléter le niveau et débloquer le suivant
+    void CompleteCurrentLevel()
+    {
+        string currentID = PlayerPrefs.GetString("CurrentLevelID", "");
+        int currentIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 0);
+
+        Debug.Log($"=== VICTOIRE niveau {currentIndex} (ID: {currentID}) ===");
+
+        // Marquer comme complété (2 = LevelState.Completed)
+        if (!string.IsNullOrEmpty(currentID))
+        {
+            PlayerPrefs.SetInt($"Level_{currentID}", 2);
+        }
+
+        // Sauvegarder pour débloquer le niveau suivant au retour
+        PlayerPrefs.SetInt("JustCompletedLevel", currentIndex);
+        PlayerPrefs.Save();
+
+        Debug.Log($"Niveau {currentIndex} complété ! Le niveau {currentIndex + 1} sera débloqué.");
+    }
+
     void ChargerLevelSelector()
     {
-        SceneManager.LoadScene("levelSelector");
+        SceneManager.LoadScene("LevelSelector"); // ← Corrigé la casse
     }
 }
