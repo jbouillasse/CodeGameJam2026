@@ -1,0 +1,291 @@
+fileFormatVersion: 2
+guid: b223fb874b3b7964e8892702883dda5d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1774985441851239017
+    second: WIN_0
+  - first:
+      213: 6686193658041649339
+    second: WIN_1
+  - first:
+      213: 3542124068192253194
+    second: WIN_2
+  - first:
+      213: 6348551394550683351
+    second: WIN_3
+  - first:
+      213: -6186214232039926851
+    second: WIN_4
+  - first:
+      213: -9061693303547840653
+    second: WIN_5
+  - first:
+      213: -5721805498961102516
+    second: WIN_6
+  - first:
+      213: -7138760679093214376
+    second: WIN_7
+  - first:
+      213: 3760711102879981993
+    second: WIN_8
+  - first:
+      213: -6661509302269249097
+    second: WIN_9
+  - first:
+      213: 8950392127416250180
+    second: WIN_10
+  - first:
+      213: -3851922834828594334
+    second: WIN_11
+  - first:
+      213: -3543705856667459882
+    second: WIN_12
+  - first:
+      213: -679210835731277981
+    second: WIN_13
+  - first:
+      213: 1851111809998250049
+    second: WIN_14
+  - first:
+      213: 862752901074883562
+    second: WIN_15
+  - first:
+      213: 651269170229391292
+    second: WIN_16
+  - first:
+      213: 1567147300495106352
+    second: WIN_17
+  - first:
+      213: 5929235631026166566
+    second: WIN_18
+  - first:
+      213: 2060882050842564739
+    second: WIN_19
+  - first:
+      213: 1077448489906760896
+    second: WIN_20
+  - first:
+      213: 5031059846290522065
+    second: WIN_21
+  - first:
+      213: -8644448388594148727
+    second: WIN_22
+  - first:
+      213: 3424742017297507972
+    second: WIN_23
+  - first:
+      213: 8699701884993934592
+    second: WIN_24
+  - first:
+      213: -7454168554873508990
+    second: WIN_25
+  - first:
+      213: -7238913991543090566
+    second: WIN_26
+  - first:
+      213: 1826122444273306369
+    second: WIN_27
+  - first:
+      213: 8054546724230872716
+    second: WIN_28
+  - first:
+      213: -4523193768268586770
+    second: WIN_29
+  - first:
+      213: -1441146200865709716
+    second: WIN_30
+  - first:
+      213: -8651824625508555740
+    second: WIN_31
+  - first:
+      213: -467753587583774294
+    second: WIN_32
+  - first:
+      213: 3348363987584430946
+    second: WIN_33
+  - first:
+      213: 4350088925361970951
+    second: WIN_34
+  - first:
+      213: 6349681430964118924
+    second: WIN_35
+  - first:
+      213: 7306578871828656142
+    second: WIN_36
+  - first:
+      213: 7809564793954622593
+    second: WIN_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WIN_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 266
+        width: 745
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96a6807ead302a810800000000000000
+      internalID: 1774985441851239017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 0b22ca4bf4e4cac44985650c8f37cad9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      WIN_0: 1774985441851239017
+      WIN_1: 6686193658041649339
+      WIN_10: 8950392127416250180
+      WIN_11: -3851922834828594334
+      WIN_12: -3543705856667459882
+      WIN_13: -679210835731277981
+      WIN_14: 1851111809998250049
+      WIN_15: 862752901074883562
+      WIN_16: 651269170229391292
+      WIN_17: 1567147300495106352
+      WIN_18: 5929235631026166566
+      WIN_19: 2060882050842564739
+      WIN_2: 3542124068192253194
+      WIN_20: 1077448489906760896
+      WIN_21: 5031059846290522065
+      WIN_22: -8644448388594148727
+      WIN_23: 3424742017297507972
+      WIN_24: 8699701884993934592
+      WIN_25: -7454168554873508990
+      WIN_26: -7238913991543090566
+      WIN_27: 1826122444273306369
+      WIN_28: 8054546724230872716
+      WIN_29: -4523193768268586770
+      WIN_3: 6348551394550683351
+      WIN_30: -1441146200865709716
+      WIN_31: -8651824625508555740
+      WIN_32: -467753587583774294
+      WIN_33: 3348363987584430946
+      WIN_34: 4350088925361970951
+      WIN_35: 6349681430964118924
+      WIN_36: 7306578871828656142
+      WIN_37: 7809564793954622593
+      WIN_4: -6186214232039926851
+      WIN_5: -9061693303547840653
+      WIN_6: -5721805498961102516
+      WIN_7: -7138760679093214376
+      WIN_8: 3760711102879981993
+      WIN_9: -6661509302269249097
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
