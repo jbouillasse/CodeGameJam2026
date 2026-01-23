@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UIElements;
 
 public class LevelManager : MonoBehaviour
 {
@@ -49,7 +48,6 @@ public class LevelManager : MonoBehaviour
 
             panelTuto.SetActive(false);
         }
-
 
         if (backgroundSprite != null)
         {
@@ -109,7 +107,6 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(2f);
             scriptMainJoueur.ResetState();
 
-
             scriptUI.MontrerDodgeIcon();
             float attenteAleatoire = Random.Range(2f, 5f);
             yield return new WaitForSeconds(attenteAleatoire);
@@ -140,7 +137,6 @@ public class LevelManager : MonoBehaviour
             scriptEnnemi.MettreEnAttente();
             scriptUI.UpdateCoeurs(vieJoueur, vieEnnemi);
 
-            // Vérifier Défaite
             if (vieJoueur <= 0) { Defaite(); break; }
 
             yield return new WaitForSeconds(1.5f);
@@ -149,6 +145,8 @@ public class LevelManager : MonoBehaviour
 
     void Victoire()
     {
+        jeuFini = true;
+        
         if (musiqueDeFond != null) musiqueDeFond.Stop();
 
         if (bruitagesSource != null && sonVictoire != null)
@@ -158,10 +156,18 @@ public class LevelManager : MonoBehaviour
 
         scriptUI.AfficherVictoire();
         Debug.Log("GAGNÉ");
+        
+        // Compléter le niveau
+        CompleteCurrentLevel();
+        
+        // Retour à la map après 3 secondes
+        Invoke("RetourMap", 3f);
     }
 
     void Defaite()
     {
+        jeuFini = true;
+        
         if (musiqueDeFond != null) musiqueDeFond.Stop();
 
         if (bruitagesSource != null && sonDefaite != null)
@@ -171,6 +177,33 @@ public class LevelManager : MonoBehaviour
 
         scriptUI.AfficherDefaite();
         Debug.Log("PERDU");
+        
+        // Retour à la map après 3 secondes (sans compléter)
+        Invoke("RetourMap", 3f);
     }
 
+    void CompleteCurrentLevel()
+    {
+        string currentID = PlayerPrefs.GetString("CurrentLevelID", "");
+        int currentIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 0);
+        
+        Debug.Log($"=== VICTOIRE niveau {currentIndex} (ID: {currentID}) ===");
+        
+        // Marquer comme complété (2 = LevelState.Completed)
+        if (!string.IsNullOrEmpty(currentID))
+        {
+            PlayerPrefs.SetInt($"Level_{currentID}", 2);
+        }
+        
+        // Sauvegarder pour débloquer le niveau suivant au retour
+        PlayerPrefs.SetInt("JustCompletedLevel", currentIndex);
+        PlayerPrefs.Save();
+        
+        Debug.Log($"Niveau {currentIndex} complété ! Le niveau {currentIndex + 1} sera débloqué.");
+    }
+
+    void RetourMap()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelector");
+    }
 }
