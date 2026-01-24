@@ -169,7 +169,7 @@ public class HammerGameManager : MonoBehaviour
     // Si tu utilises le "snap" pour rendre la cloche atteignable :
     if (power01 >= 0.95f) power01 = 1f;
 
-    // fait monter l'indicator (et déclenchera OnBellRang si power01==1)
+    // fait monter l'indicator (et dï¿½clenchera OnBellRang si power01==1)
     if (indicator != null)
         indicator.ShowScore(power01);
 
@@ -177,7 +177,7 @@ public class HammerGameManager : MonoBehaviour
     if (ambienceSource != null)
         ambienceSource.Stop();
 
-    // Décide victoire/défaite après que l’indicator ait eu le temps d’arriver en haut
+    // Dï¿½cide victoire/dï¿½faite aprï¿½s que lï¿½indicator ait eu le temps dï¿½arriver en haut
     float wait = (indicator != null) ? indicator.moveTime : 0.25f;
     StartCoroutine(EndAfterIndicator(wait));
 }

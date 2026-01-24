@@ -300,7 +300,6 @@ MonoBehaviour:
   defeatPanel: {fileID: 9057671175801673169}
   tutorialPanel: {fileID: 1768433974}
   countdownTime: 3
-  mapSceneName: LevelSelector
 --- !u!4 &401843349
 Transform:
   m_ObjectHideFlags: 0
