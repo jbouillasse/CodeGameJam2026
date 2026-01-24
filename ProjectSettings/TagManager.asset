@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pomme
   - background
+  - Canette
   layers:
   - Default
   - TransparentFX
