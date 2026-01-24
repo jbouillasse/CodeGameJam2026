@@ -1134,10 +1134,10 @@ MonoBehaviour:
   sonVictoire: {fileID: 8300000, guid: 3fdc1d4dd99ceca4eba5553f970c2132, type: 3}
   sonDefaite: {fileID: 8300000, guid: 25b8ed36f51c2a9439db4e8632fe99cf, type: 3}
   musiqueFond: {fileID: 8300000, guid: ba77a5b2f3374734c80bdefe80ce6968, type: 3}
-  nombreMelanges: 5
-  vitesse: 0.5
-  maxRounds: 3
-  roundsPourGagner: 2
+  nombreMelanges: 10
+  vitesse: 0.25
+  maxRounds: 5
+  roundsPourGagner: 3
   peutCliquer: 0
 --- !u!82 &1841840825
 AudioSource:

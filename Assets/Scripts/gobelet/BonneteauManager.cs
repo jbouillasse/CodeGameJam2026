@@ -19,6 +19,8 @@ public class BonneteauManager : MonoBehaviour
     [Header("Réglages")]
     public int nombreMelanges = 5;
     public float vitesse = 0.5f;
+    public int maxRounds = 3;
+    public int roundsPourGagner = 2;
 
     [HideInInspector]
     public bool peutCliquer = false;
@@ -26,7 +28,6 @@ public class BonneteauManager : MonoBehaviour
     private int indexGagnant;
     private int scoreJoueur = 0;
     private int roundActuel = 0;
-    private int maxRounds = 3;
 
     void Start()
     {
@@ -177,7 +178,7 @@ public class BonneteauManager : MonoBehaviour
     {
         if (sourceAudio != null) sourceAudio.Stop();
 
-        if (scoreJoueur >= 2)
+        if (scoreJoueur >= roundsPourGagner)
         {
             texteAffichage.text = "VICTOIRE !";
             texteAffichage.color = Color.yellow;
@@ -188,7 +189,6 @@ public class BonneteauManager : MonoBehaviour
                 sourceAudio.PlayOneShot(sonVictoire);
             }
 
-            // ✅ NOUVEAU : Compléter le niveau
             CompleteCurrentLevel();
         }
         else
@@ -206,7 +206,6 @@ public class BonneteauManager : MonoBehaviour
         Invoke("ChargerLevelSelector", 5f);
     }
 
-    // ✅ NOUVELLE MÉTHODE : Compléter le niveau et débloquer le suivant
     void CompleteCurrentLevel()
     {
         string currentID = PlayerPrefs.GetString("CurrentLevelID", "");
@@ -214,13 +213,11 @@ public class BonneteauManager : MonoBehaviour
 
         Debug.Log($"=== VICTOIRE niveau {currentIndex} (ID: {currentID}) ===");
 
-        // Marquer comme complété (2 = LevelState.Completed)
         if (!string.IsNullOrEmpty(currentID))
         {
             PlayerPrefs.SetInt($"Level_{currentID}", 2);
         }
 
-        // Sauvegarder pour débloquer le niveau suivant au retour
         PlayerPrefs.SetInt("JustCompletedLevel", currentIndex);
         PlayerPrefs.Save();
 
@@ -229,6 +226,6 @@ public class BonneteauManager : MonoBehaviour
 
     void ChargerLevelSelector()
     {
-        SceneManager.LoadScene("LevelSelector"); // ← Corrigé la casse
+        SceneManager.LoadScene("LevelSelector");
     }
 }

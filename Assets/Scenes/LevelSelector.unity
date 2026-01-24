@@ -3095,8 +3095,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelNode
   levelIndex: 8
-  sceneName: 
-  simulateWin: 1
+  sceneName: MiniJeuGobelet1
+  simulateWin: 0
   lockedSprite: {fileID: 2053423597429031267, guid: af5a07c3031f7fd4c96cb124c8b0aef1, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 9932448ddf798074d871099b476d3534, type: 3}
   lockedSpriteScale: 1
