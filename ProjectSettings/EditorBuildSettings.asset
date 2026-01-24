@@ -38,6 +38,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Carabine1.unity
     guid: a3a8a8cb13f002548813a8b0f9b80884
+  - enabled: 1
+    path: Assets/Scenes/MiniJeuChamboule.unity
+    guid: ee91203bba8ff3a47b7b39ab50a457e7
+  - enabled: 1
+    path: Assets/Scenes/Screamer.unity
+    guid: bd44a1abe953f5a439c2fd6bc5ee8d18
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

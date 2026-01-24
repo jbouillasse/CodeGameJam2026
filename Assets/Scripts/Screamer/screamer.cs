@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Screamer : MonoBehaviour
@@ -25,6 +26,30 @@ public class Screamer : MonoBehaviour
 
         screamerImage.SetActive(false);
 
-        buttonObject.SetActive(true);
+        // ✅ NOUVEAU : Compléter le niveau
+        CompleteCurrentLevel();
+
+        // ✅ Retour à la map après 1 seconde
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("LevelSelector");
+    }
+
+    // ✅ NOUVELLE MÉTHODE : Compléter le niveau
+    void CompleteCurrentLevel()
+    {
+        string currentID = PlayerPrefs.GetString("CurrentLevelID", "");
+        int currentIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 0);
+
+        Debug.Log($"=== VICTOIRE niveau {currentIndex} (ID: {currentID}) ===");
+
+        if (!string.IsNullOrEmpty(currentID))
+        {
+            PlayerPrefs.SetInt($"Level_{currentID}", 2);
+        }
+
+        PlayerPrefs.SetInt("JustCompletedLevel", currentIndex);
+        PlayerPrefs.Save();
+
+        Debug.Log($"Niveau {currentIndex} complété ! Le niveau {currentIndex + 1} sera débloqué.");
     }
 }
