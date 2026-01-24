@@ -53,6 +53,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Wheel.unity
     guid: 336dd9c015e7518458045d0771d9dbed
+  - enabled: 1
+    path: Assets/Scenes/Wheel1.unity
+    guid: dfd4f6a456318b84baa756e8be4af1a7
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
