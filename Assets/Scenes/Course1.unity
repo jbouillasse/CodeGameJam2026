@@ -278,10 +278,10 @@ MonoBehaviour:
   scorePerClick: 1
   opponent: {fileID: 620762882}
   opponentAnimator: {fileID: 620762880}
-  targetScore: 100
+  targetScore: 150
   opponentDifficulty: 1.4
   wrongClickPenalty: 3
-  minTimeBetweenClicks: 0.1
+  minTimeBetweenClicks: 0.01
   behindPositionX: -1
   aheadPositionX: 1
   winExitPositionX: 20

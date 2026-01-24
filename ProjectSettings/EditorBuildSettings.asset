@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/AppleGame.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
+    path: Assets/Scenes/AppleGame1.unity
+    guid: 2bf2a4a6611c22a4b80d86613ad0e912
+  - enabled: 1
     path: Assets/Scenes/MiniJeuGobelet.unity
     guid: cfd1fdb6003028946858805156143211
   - enabled: 1
