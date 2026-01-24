@@ -860,7 +860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   gameDuration: 20
   minShots: 25
-  accuracyRequired: 95
+  accuracyRequired: 90
   victoire: 0
   resultImage: {fileID: 1444706798}
   resultBack: {fileID: 0}
