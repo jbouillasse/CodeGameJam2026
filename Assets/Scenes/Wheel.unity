@@ -419,7 +419,8 @@ MonoBehaviour:
   bruitagesSource: {fileID: 0}
   sonVictoire: {fileID: 8300000, guid: f8f920c4982823f4dbef39bb25bc71db, type: 3}
   sonDefaite: {fileID: 8300000, guid: 750ae422051f00246977d1f21bde01d0, type: 3}
-  nomSceneMap: Map
+  nomSceneMap: LevelSelector
+  viesDeDepart: 3
   estEnTuto: 0
 --- !u!82 &401422398
 AudioSource:

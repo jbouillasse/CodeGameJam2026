@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class WheelManager : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class WheelManager : MonoBehaviour
     [Header("Navigation")]
     public string nomSceneMap = "LevelSelector";
 
+    [Header("RÃ©glages")]
+    public int viesDeDepart = 3;
+
     private int vieJoueur;
     private bool jeuFini = false;
     public bool estEnTuto = false;
@@ -29,21 +33,25 @@ public class WheelManager : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        // Charger vie et UI
-        vieJoueur = PlayerPrefs.GetInt("VieJoueur", 3);
+        // Reset les vies au lancement
+        vieJoueur = viesDeDepart;
+        PlayerPrefs.SetInt("VieJoueur", vieJoueur);
+        PlayerPrefs.Save();
+
         if (scriptUI != null) scriptUI.UpdateCoeurs(vieJoueur, 0);
 
         // --- GESTION TUTO ---
-        // Si tu veux revoir le tuto : Fais "Edit -> Clear All PlayerPrefs" dans Unity
-        if (PlayerPrefs.GetInt("TutoRoueVu", 0) == 0)
+        // âœ… TOUJOURS afficher le tuto (on ne vÃ©rifie plus TutoRoueVu)
+        estEnTuto = true;
+        if (panelTuto != null) 
         {
-            estEnTuto = true;
-            if (panelTuto != null) panelTuto.SetActive(true);
+            panelTuto.SetActive(true);
+            Debug.Log("TUTO AFFICHÃ‰");
         }
         else
         {
+            Debug.LogError("panelTuto n'est pas assignÃ© dans l'Inspector !");
             estEnTuto = false;
-            if (panelTuto != null) panelTuto.SetActive(false);
         }
 
         if (ecranVictoire != null) ecranVictoire.SetActive(false);
@@ -52,18 +60,15 @@ public class WheelManager : MonoBehaviour
 
     public void FermerTuto()
     {
-        if (panelTuto != null) panelTuto.SetActive(false); // Cache le visuel
+        if (panelTuto != null) panelTuto.SetActive(false);
 
-        PlayerPrefs.SetInt("TutoRoueVu", 1); // Sauvegarde pour ne plus l'afficher
-        PlayerPrefs.Save();
-
-        // ACTIVE LE BOUCLIER ICI
         if (scriptRoue != null)
         {
             scriptRoue.ActiverInputApresDelai(0.5f);
         }
 
-        estEnTuto = false; // Le tuto est officiellement fini
+        estEnTuto = false;
+        Debug.Log("TUTO FERMÃ‰ - JEU LANCÃ‰");
     }
 
     public void Victoire()
@@ -71,7 +76,7 @@ public class WheelManager : MonoBehaviour
         if (jeuFini) return;
         jeuFini = true;
 
-        Debug.Log("GAGNÉ !");
+        Debug.Log("GAGNÃ‰ !");
 
         if (musiqueDeFond != null) musiqueDeFond.Stop();
         if (bruitagesSource != null && sonVictoire != null)
@@ -81,7 +86,8 @@ public class WheelManager : MonoBehaviour
 
         if (ecranVictoire != null) ecranVictoire.SetActive(true);
 
-        Invoke("RetourMap", 3f);
+        // âœ… Utilise une Coroutine au lieu de Invoke
+        StartCoroutine(RetourMapDelai(3f));
     }
 
     public void Defaite()
@@ -91,43 +97,52 @@ public class WheelManager : MonoBehaviour
 
         Debug.Log("PERDU !");
 
-        // Perdre vie
         vieJoueur--;
         PlayerPrefs.SetInt("VieJoueur", vieJoueur);
         PlayerPrefs.Save();
 
         if (scriptUI != null) scriptUI.UpdateCoeurs(vieJoueur, 0);
-        if (musiqueDeFond != null) musiqueDeFond.Stop(); // On coupe la musique un instant
+        if (musiqueDeFond != null) musiqueDeFond.Stop();
         if (bruitagesSource != null && sonDefaite != null)
             bruitagesSource.PlayOneShot(sonDefaite);
 
         if (ecranDefaite != null) ecranDefaite.SetActive(true);
 
-        // --- CORRECTION ICI ---
         if (vieJoueur <= 0)
         {
-            // Plus de vie : On retourne à la map (Game Over)
-            Invoke("RetourMap", 3f);
+            // âœ… Utilise une Coroutine
+            StartCoroutine(RetourMapDelai(3f));
         }
         else
         {
-            // Encore de la vie : On relance la roue après 2 secondes !
-            Invoke("SoftReset", 2f);
+            StartCoroutine(SoftResetDelai(2f));
         }
     }
 
-    // NOUVELLE FONCTION POUR RELANCER SANS CHARGER LA SCENE
+    // âœ… NOUVELLE COROUTINE pour le retour Ã  la map
+    IEnumerator RetourMapDelai(float delai)
+    {
+        Debug.Log($"Retour Ã  la map dans {delai} secondes...");
+        yield return new WaitForSeconds(delai);
+        Debug.Log("Chargement de : " + nomSceneMap);
+        SceneManager.LoadScene(nomSceneMap);
+    }
+
+    // âœ… NOUVELLE COROUTINE pour le soft reset
+    IEnumerator SoftResetDelai(float delai)
+    {
+        yield return new WaitForSeconds(delai);
+        SoftReset();
+    }
+
     void SoftReset()
     {
-        jeuFini = false; // On débloque le jeu
+        jeuFini = false;
 
-        // On cache l'écran "X"
         if (ecranDefaite != null) ecranDefaite.SetActive(false);
 
-        // On remet la musique
         if (musiqueDeFond != null) musiqueDeFond.Play();
 
-        // On dit à la roue de tourner à nouveau
         if (scriptRoue != null)
         {
             scriptRoue.RelancerLaRoue();
@@ -147,11 +162,6 @@ public class WheelManager : MonoBehaviour
         PlayerPrefs.SetInt("JustCompletedLevel", currentIndex);
         PlayerPrefs.Save();
 
-        Debug.Log($"Niveau {currentIndex} validé !");
-    }
-
-    void RetourMap()
-    {
-        SceneManager.LoadScene(nomSceneMap);
+        Debug.Log($"Niveau {currentIndex} validÃ© !");
     }
 }
