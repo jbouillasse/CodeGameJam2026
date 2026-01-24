@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Pomme
+  - background
   layers:
   - Default
   - TransparentFX
@@ -45,8 +46,19 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Foreground
-    uniqueID: 926672411
+  - name: sugoi
+    uniqueID: 3846581387
+  - name: Background
+    uniqueID: 2777891479
+    locked: 0
+  - name: Targets
+    uniqueID: 3333407441
+    locked: 0
+  - name: Foreground-Bottom
+    uniqueID: 509116865
+    locked: 0
+  - name: Foreground-Top
+    uniqueID: 2042123595
     locked: 0
   m_RenderingLayers:
   - Default
