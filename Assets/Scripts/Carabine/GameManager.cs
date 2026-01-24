@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
     public float gameDuration = 30f;
     public bool IsRunning { get; private set; }
 
+    [Header("Conditions de Victoire")]
+    public int minShots = 20;
+    public float accuracyRequired = 90f;
+
     [Header("Score")]
     public int Score { get; private set; }
 
@@ -83,11 +87,10 @@ public class GameManager : MonoBehaviour
     void EndGame()
     {
         float accuracy = GetAccuracy();
-        int minShots = 20;
 
         Debug.Log($"FIN ! Score = {Score} | Accuracy = {accuracy:0.0}% ({Kills}/{Shots})");
 
-        if (Shots >= minShots && accuracy >= 90f)
+        if (Shots >= minShots && accuracy >= accuracyRequired)
         {
             victoire = true;
             ShowResult(victoireSprite);
