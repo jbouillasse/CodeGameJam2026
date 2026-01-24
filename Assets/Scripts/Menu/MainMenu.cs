@@ -3,10 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    
     public void Play()
     {
-        // Load the fist scene (the game scene)
+        // Continuer la partie (sans reset)
+        SceneManager.LoadScene(1);
+    }
+
+    public void NewGame()
+    {
+        // Nouvelle partie (reset tout)
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        
+        Debug.Log("=== NOUVELLE PARTIE ===");
+        
         SceneManager.LoadScene(1);
     }
 
@@ -14,7 +24,6 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
 
-        // Test in editor
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #endif

@@ -13,7 +13,7 @@ public class LevelMapManager : MonoBehaviour
     public float unlockDelay = 0.3f;
 
     [Header("Référence au joueur sur la map")]
-public GameObject joueur; // À assigner dans l'inspecteur Unity
+    public GameObject joueur;
     
     void Awake()
     {
@@ -28,41 +28,38 @@ public GameObject joueur; // À assigner dans l'inspecteur Unity
         if (nodes.Count == 0)
         {
             nodes = FindObjectsByType<LevelNode>(FindObjectsSortMode.None).ToList();
-            PlaceJoueurAuDernierNiveau();
         }
         
-        // ✅ NOUVEAU : Vérifier si on revient d'un niveau complété
+        PlaceJoueurAuDernierNiveau();
         CheckForCompletedLevel();
     }
 
     public void PlaceJoueurAuDernierNiveau()
-{
-    string lastUniqueID = PlayerPrefs.GetString("LastPlayedLevelUniqueID", "");
-    LevelNode nodePourJoueur = null;
+    {
+        string lastUniqueID = PlayerPrefs.GetString("LastPlayedLevelUniqueID", "");
+        LevelNode nodePourJoueur = null;
 
-    if (!string.IsNullOrEmpty(lastUniqueID))
-    {
-        nodePourJoueur = nodes.FirstOrDefault(n => n.UniqueID == lastUniqueID);
-    }
+        if (!string.IsNullOrEmpty(lastUniqueID))
+        {
+            nodePourJoueur = nodes.FirstOrDefault(n => n.UniqueID == lastUniqueID);
+        }
 
-    // Si pour une raison quelconque l'ID n'est pas dispo, fallback sur l'index comme avant
-    if (nodePourJoueur == null)
-    {
-        int lastPlayed = PlayerPrefs.GetInt("LastPlayedLevelIndex", 0);
-        nodePourJoueur = nodes.FirstOrDefault(n => n.levelIndex == lastPlayed);
-    }
+        if (nodePourJoueur == null)
+        {
+            int lastPlayed = PlayerPrefs.GetInt("LastPlayedLevelIndex", 0);
+            nodePourJoueur = nodes.FirstOrDefault(n => n.levelIndex == lastPlayed);
+        }
 
-    if (nodePourJoueur != null && joueur != null)
-    {
-        joueur.transform.position = nodePourJoueur.transform.position;
+        if (nodePourJoueur != null && joueur != null)
+        {
+            joueur.transform.position = nodePourJoueur.transform.position;
+        }
+        else
+        {
+            Debug.LogWarning($"Emplacement niveau non trouvé, pas de téléportation.");
+        }
     }
-    else
-    {
-        Debug.LogWarning($"Emplacement niveau non trouvé, pas de téléportation.");
-    }
-}
     
-    // ✅ NOUVELLE MÉTHODE
     private void CheckForCompletedLevel()
     {
         int justCompleted = PlayerPrefs.GetInt("JustCompletedLevel", -1);
@@ -71,11 +68,9 @@ public GameObject joueur; // À assigner dans l'inspecteur Unity
         {
             Debug.Log($"Retour de victoire ! Déblocage du niveau {justCompleted + 1}");
             
-            // Effacer le flag
             PlayerPrefs.DeleteKey("JustCompletedLevel");
             PlayerPrefs.Save();
             
-            // Débloquer le niveau suivant
             StartCoroutine(UnlockAllWithIndex(justCompleted + 1));
         }
     }
@@ -99,7 +94,7 @@ public GameObject joueur; // À assigner dans l'inspecteur Unity
     
     private System.Collections.IEnumerator UnlockAllWithIndex(int index)
     {
-        yield return new WaitForSeconds(0.5f); // Petit délai pour que tout soit chargé
+        yield return new WaitForSeconds(0.5f);
         
         var nodesToUnlock = nodes.Where(n => n.levelIndex == index && n.GetState() == LevelState.Locked).ToList();
         
@@ -119,19 +114,21 @@ public GameObject joueur; // À assigner dans l'inspecteur Unity
     }
     
     [ContextMenu("Reset Progress")]
-public void ResetProgress()
-{
-    foreach (var node in nodes)
-        PlayerPrefs.DeleteKey($"Level_{node.UniqueID}");
-    
-    PlayerPrefs.DeleteKey("CurrentLevelID");
-    PlayerPrefs.DeleteKey("CurrentLevelIndex");
-    PlayerPrefs.DeleteKey("CurrentPathNodeName");
-    PlayerPrefs.DeleteKey("JustCompletedLevel");
-    PlayerPrefs.DeleteKey("DebugLevel");
-    PlayerPrefs.Save();
-    
-    var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
-    UnityEngine.SceneManagement.SceneManager.LoadScene(scene.name);
-}
+    public void ResetProgress()
+    {
+        foreach (var node in nodes)
+            PlayerPrefs.DeleteKey($"Level_{node.UniqueID}");
+        
+        PlayerPrefs.DeleteKey("CurrentLevelID");
+        PlayerPrefs.DeleteKey("CurrentLevelIndex");
+        PlayerPrefs.DeleteKey("CurrentPathNodeName");
+        PlayerPrefs.DeleteKey("JustCompletedLevel");
+        PlayerPrefs.DeleteKey("DebugLevel");
+        PlayerPrefs.DeleteKey("LastPlayedLevelIndex");
+        PlayerPrefs.DeleteKey("LastPlayedLevelUniqueID");
+        PlayerPrefs.Save();
+        
+        var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scene.name);
+    }
 }
