@@ -24,6 +24,21 @@ public class HammerVisual : MonoBehaviour
             spriteRenderer = GetComponent<SpriteRenderer>();
 
         baseScale = transform.localScale;
+        
+        // ✅ FIX : Afficher le sprite normal au démarrage
+        if (spriteRenderer != null && normalSprite != null)
+        {
+            spriteRenderer.sprite = normalSprite;
+        }
+    }
+
+    void Start()
+    {
+        // ✅ FIX : Double vérification au Start
+        if (spriteRenderer != null && normalSprite != null && spriteRenderer.sprite == null)
+        {
+            spriteRenderer.sprite = normalSprite;
+        }
     }
 
     public void SetState(HammerGameManager.HeatState state)
@@ -33,19 +48,18 @@ public class HammerVisual : MonoBehaviour
         switch (state)
         {
             case HammerGameManager.HeatState.Normal:
-                spriteRenderer.sprite = normalSprite;
+                if (normalSprite != null) spriteRenderer.sprite = normalSprite;
                 break;
 
             case HammerGameManager.HeatState.Hot:
-                spriteRenderer.sprite = hotSprite;
+                if (hotSprite != null) spriteRenderer.sprite = hotSprite;
                 break;
 
             case HammerGameManager.HeatState.Flaming:
-                spriteRenderer.sprite = flamingSprite;
+                if (flamingSprite != null) spriteRenderer.sprite = flamingSprite;
                 break;
         }
 
-        // petit feedback visuel
         if (popCo != null) StopCoroutine(popCo);
         popCo = StartCoroutine(Pop());
     }

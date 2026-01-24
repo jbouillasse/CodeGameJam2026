@@ -51,13 +51,11 @@ public class HammerGameManager : MonoBehaviour
     [Header("Ambience")]
     public AudioSource ambienceSource;
 
-
     private float timeLeft;
     private float charge;
     private HeatState currentState = HeatState.Normal;
     private bool hasHit;
     private bool bellRang;
-
 
     void Start()
     {
@@ -70,26 +68,27 @@ public class HammerGameManager : MonoBehaviour
         if (defeatPanel != null) defeatPanel.SetActive(false);
 
         if (indicator != null)
-        indicator.OnBell += OnBellRang; 
+            indicator.OnBell += OnBellRang; 
 
+        // ✅ FIX : Forcer l'affichage du marteau au démarrage
         if (hammer != null)
+        {
+            hammer.gameObject.SetActive(true);
             hammer.SetState(HeatState.Normal);
+        }
 
         if (indicator != null)
             indicator.ResetToBottom();
 
-        if (indicator != null)
-            indicator.OnBell += PlayBell;
-
-
         RefreshUI();
+        
+        Debug.Log("HammerGame démarré !");
     }
 
     void Update()
     {
         if (hasHit) return;
 
-       
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0f)
         {
@@ -98,7 +97,6 @@ public class HammerGameManager : MonoBehaviour
             return;
         }
 
-       
         if (charge > 0f)
         {
             charge -= decayPerSecond * Time.deltaTime;
@@ -133,7 +131,6 @@ public class HammerGameManager : MonoBehaviour
 
         if (newState != currentState)
         {
-          
             bool enteredFlaming = (currentState != HeatState.Flaming && newState == HeatState.Flaming);
 
             currentState = newState;
@@ -143,7 +140,6 @@ public class HammerGameManager : MonoBehaviour
 
             if (enteredFlaming)
             {
-               
                 if (sfxSource != null && flameOnClip != null)
                     sfxSource.PlayOneShot(flameOnClip);
             }
@@ -151,47 +147,34 @@ public class HammerGameManager : MonoBehaviour
     }
 
     private void Hit()
-{
-    hasHit = true;
+    {
+        hasHit = true;
 
-    // son de frappe
-    if (sfxSource != null && hitClip != null)
-        sfxSource.PlayOneShot(hitClip);
+        if (sfxSource != null && hitClip != null)
+            sfxSource.PlayOneShot(hitClip);
 
-    // animation marteau
-    if (hammerSwing != null)
-        hammerSwing.PlayHit();
+        if (hammerSwing != null)
+            hammerSwing.PlayHit();
 
-    // calc puissance
-    float power01 = (maxCharge <= 0f) ? 0f : (charge / maxCharge);
-    power01 = Mathf.Clamp01(power01);
+        float power01 = (maxCharge <= 0f) ? 0f : (charge / maxCharge);
+        power01 = Mathf.Clamp01(power01);
 
-    // Si tu utilises le "snap" pour rendre la cloche atteignable :
-    if (power01 >= 0.95f) power01 = 1f;
+        if (power01 >= 0.95f) power01 = 1f;
 
-    // fait monter l'indicator (et d�clenchera OnBellRang si power01==1)
-    if (indicator != null)
-        indicator.ShowScore(power01);
+        if (indicator != null)
+            indicator.ShowScore(power01);
 
-    // stop ambiance si tu veux
-    if (ambienceSource != null)
-        ambienceSource.Stop();
+        if (ambienceSource != null)
+            ambienceSource.Stop();
 
-    // D�cide victoire/d�faite apr�s que l�indicator ait eu le temps d�arriver en haut
-    float wait = (indicator != null) ? indicator.moveTime : 0.25f;
-    StartCoroutine(EndAfterIndicator(wait));
-}
+        float wait = (indicator != null) ? indicator.moveTime : 0.25f;
+        StartCoroutine(EndAfterIndicator(wait));
+    }
 
     private void PlayBell()
     {
         if (sfxSource != null && bellSound != null)
             sfxSource.PlayOneShot(bellSound);
-    }
-
-    private IEnumerator ReturnToMap()
-    {
-        yield return new WaitForSeconds(returnDelaySeconds);
-        SceneManager.LoadScene(levelSelectorSceneName);
     }
 
     private void RefreshUI()
@@ -201,27 +184,49 @@ public class HammerGameManager : MonoBehaviour
     }
 
     private IEnumerator EndAfterIndicator(float wait)
-{
-    yield return new WaitForSeconds(wait + 0.05f);
-
-    if (bellRang)
     {
-        if (victoryPanel != null) victoryPanel.SetActive(true);
-    }
-    else
-    {
-        if (defeatPanel != null) defeatPanel.SetActive(true);
-    }
+        yield return new WaitForSeconds(wait + 0.05f);
 
-    yield return new WaitForSeconds(returnDelaySeconds);
-    SceneManager.LoadScene(levelSelectorSceneName);
-}
+        if (bellRang)
+        {
+            Debug.Log("VICTOIRE !");
+            if (victoryPanel != null) victoryPanel.SetActive(true);
+            
+            // ✅ IMPORTANT : Compléter le niveau
+            CompleteCurrentLevel();
+        }
+        else
+        {
+            Debug.Log("DÉFAITE !");
+            if (defeatPanel != null) defeatPanel.SetActive(true);
+        }
 
+        yield return new WaitForSeconds(returnDelaySeconds);
+        SceneManager.LoadScene(levelSelectorSceneName);
+    }
 
     private void OnBellRang()
-{
-    bellRang = true;
+    {
+        bellRang = true;
+        PlayBell();
+    }
 
-    PlayBell();
-}
+    // ✅ MÉTHODE POUR COMPLÉTER LE NIVEAU
+    void CompleteCurrentLevel()
+    {
+        string currentID = PlayerPrefs.GetString("CurrentLevelID", "");
+        int currentIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 0);
+
+        Debug.Log($"=== VICTOIRE niveau {currentIndex} (ID: {currentID}) ===");
+
+        if (!string.IsNullOrEmpty(currentID))
+        {
+            PlayerPrefs.SetInt($"Level_{currentID}", 2);
+        }
+
+        PlayerPrefs.SetInt("JustCompletedLevel", currentIndex);
+        PlayerPrefs.Save();
+
+        Debug.Log($"Niveau {currentIndex} complété ! Le niveau {currentIndex + 1} sera débloqué.");
+    }
 }
