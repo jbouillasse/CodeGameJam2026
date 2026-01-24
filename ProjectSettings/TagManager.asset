@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Pomme
   - background
+  - Pass
+  - Fail
   layers:
   - Default
   - TransparentFX
@@ -48,6 +50,7 @@ TagManager:
     locked: 0
   - name: sugoi
     uniqueID: 3846581387
+    locked: 0
   - name: Background
     uniqueID: 2777891479
     locked: 0
