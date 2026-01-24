@@ -40,15 +40,13 @@ public class GameManager : MonoBehaviour
         StartGame();
     }
 
-void ShowResult(Sprite sprite)
-{
-    if (resultBack != null) resultBack.gameObject.SetActive(true);
+    void ShowResult(Sprite sprite)
+    {
+        if (resultBack != null) resultBack.gameObject.SetActive(true);
 
-    resultImage.sprite = sprite;
-    resultImage.gameObject.SetActive(true);
-}
-
-
+        resultImage.sprite = sprite;
+        resultImage.gameObject.SetActive(true);
+    }
 
     public void StartGame()
     {
@@ -82,33 +80,52 @@ void ShowResult(Sprite sprite)
         }
     }
 
-void EndGame()
-{
-    float accuracy = GetAccuracy();
-    int minShots = 20;
-
-    Debug.Log($"FIN ! Score = {Score} | Accuracy = {accuracy:0.0}% ({Kills}/{Shots})");
-
-    if (Shots >= minShots && accuracy >= 90f)
+    void EndGame()
     {
-        victoire = true;
-        ShowResult(victoireSprite);
-        // charge la scene shun
-    }
-    else
-    {
-        victoire = false;
-        ShowResult(defaiteSprite);
-        Invoke(nameof(ReloadScene), 2.5f);
-    }
-}
+        float accuracy = GetAccuracy();
+        int minShots = 20;
 
+        Debug.Log($"FIN ! Score = {Score} | Accuracy = {accuracy:0.0}% ({Kills}/{Shots})");
 
-    void ReloadScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (Shots >= minShots && accuracy >= 90f)
+        {
+            victoire = true;
+            ShowResult(victoireSprite);
+            
+            CompleteCurrentLevel();
+            Invoke(nameof(ReturnToMap), 2.5f);
+        }
+        else
+        {
+            victoire = false;
+            ShowResult(defaiteSprite);
+            
+            Invoke(nameof(ReturnToMap), 2.5f);
+        }
     }
 
+    void CompleteCurrentLevel()
+    {
+        string currentID = PlayerPrefs.GetString("CurrentLevelID", "");
+        int currentIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 0);
+        
+        Debug.Log($"=== VICTOIRE niveau {currentIndex} (ID: {currentID}) ===");
+        
+        if (!string.IsNullOrEmpty(currentID))
+        {
+            PlayerPrefs.SetInt($"Level_{currentID}", 2);
+        }
+        
+        PlayerPrefs.SetInt("JustCompletedLevel", currentIndex);
+        PlayerPrefs.Save();
+        
+        Debug.Log($"Niveau {currentIndex} complété ! Le niveau {currentIndex + 1} sera débloqué.");
+    }
+
+    void ReturnToMap()
+    {
+        SceneManager.LoadScene("LevelSelector");
+    }
 
     public void AddScore(int amount)
     {
