@@ -101,6 +101,9 @@ public class Chamboule : MonoBehaviour
                 endText.text = "VICTOIRE !";
                 endText.color = Color.yellow;
                 if (sourceAudio && sonVictoire) sourceAudio.PlayOneShot(sonVictoire);
+                
+                // ✅ NOUVEAU : Compléter le niveau
+                CompleteCurrentLevel();
             }
             else
             {
@@ -110,6 +113,25 @@ public class Chamboule : MonoBehaviour
             }
         }
         StartCoroutine(RetourAuMenu());
+    }
+
+    // ✅ NOUVELLE MÉTHODE : Compléter le niveau
+    void CompleteCurrentLevel()
+    {
+        string currentID = PlayerPrefs.GetString("CurrentLevelID", "");
+        int currentIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 0);
+
+        Debug.Log($"=== VICTOIRE niveau {currentIndex} (ID: {currentID}) ===");
+
+        if (!string.IsNullOrEmpty(currentID))
+        {
+            PlayerPrefs.SetInt($"Level_{currentID}", 2);
+        }
+
+        PlayerPrefs.SetInt("JustCompletedLevel", currentIndex);
+        PlayerPrefs.Save();
+
+        Debug.Log($"Niveau {currentIndex} complété ! Le niveau {currentIndex + 1} sera débloqué.");
     }
 
     IEnumerator RetourAuMenu()
