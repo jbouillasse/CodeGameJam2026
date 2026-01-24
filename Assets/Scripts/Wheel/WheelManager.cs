@@ -3,10 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class WheelManager : MonoBehaviour
 {
-    [Header("UI Fin de Jeu")]
-    public UIManager scriptUI;      // Pour les cœurs
-    public GameObject ecranVictoire; // Image "PASS"
-    public GameObject ecranDefaite;  // Image "X"
+    [Header("UI Tuto")]
+    public GameObject panelTuto;
+
+    [Header("Liens")]
+    public RoueController scriptRoue;
+    public UIManager scriptUI;
+    public GameObject ecranVictoire;
+    public GameObject ecranDefaite;
 
     [Header("Audio")]
     public AudioSource musiqueDeFond;
@@ -15,115 +19,135 @@ public class WheelManager : MonoBehaviour
     public AudioClip sonDefaite;
 
     [Header("Navigation")]
-    public string nomSceneMap = "LevelSelector"; // Le nom exact de ta scène Map
+    public string nomSceneMap = "LevelSelector";
 
-    private bool jeuFini = false;
     private int vieJoueur;
+    private bool jeuFini = false;
+    public bool estEnTuto = false;
 
     void Start()
     {
-        Time.timeScale = 1f; // On s'assure que le temps n'est pas figé
+        Time.timeScale = 1f;
 
-        // 1. Charger la vie actuelle
+        // Charger vie et UI
         vieJoueur = PlayerPrefs.GetInt("VieJoueur", 3);
+        if (scriptUI != null) scriptUI.UpdateCoeurs(vieJoueur, 0);
 
-        // 2. Mettre à jour l'affichage des cœurs
-        if (scriptUI != null)
+        // --- GESTION TUTO ---
+        // Si tu veux revoir le tuto : Fais "Edit -> Clear All PlayerPrefs" dans Unity
+        if (PlayerPrefs.GetInt("TutoRoueVu", 0) == 0)
         {
-            scriptUI.UpdateCoeurs(vieJoueur, 0);
+            estEnTuto = true;
+            if (panelTuto != null) panelTuto.SetActive(true);
+        }
+        else
+        {
+            estEnTuto = false;
+            if (panelTuto != null) panelTuto.SetActive(false);
         }
 
-        // Cacher les écrans de fin
         if (ecranVictoire != null) ecranVictoire.SetActive(false);
         if (ecranDefaite != null) ecranDefaite.SetActive(false);
     }
 
-    // Appelé par la Roue quand c'est VERT
+    public void FermerTuto()
+    {
+        if (panelTuto != null) panelTuto.SetActive(false); // Cache le visuel
+
+        PlayerPrefs.SetInt("TutoRoueVu", 1); // Sauvegarde pour ne plus l'afficher
+        PlayerPrefs.Save();
+
+        // ACTIVE LE BOUCLIER ICI
+        if (scriptRoue != null)
+        {
+            scriptRoue.ActiverInputApresDelai(0.5f);
+        }
+
+        estEnTuto = false; // Le tuto est officiellement fini
+    }
+
     public void Victoire()
     {
         if (jeuFini) return;
         jeuFini = true;
 
-        Debug.Log("GAGNÉ (PASS)");
+        Debug.Log("GAGNÉ !");
 
-        // 1. Audio
         if (musiqueDeFond != null) musiqueDeFond.Stop();
         if (bruitagesSource != null && sonVictoire != null)
-        {
             bruitagesSource.PlayOneShot(sonVictoire);
-        }
 
-        // 2. Afficher "PASS"
-        if (ecranVictoire != null) ecranVictoire.SetActive(true);
-
-        // 3. SAUVEGARDE DE LA PROGRESSION (Ta logique)
         CompleteCurrentLevel();
 
-        // 4. Retour à la map après 3 secondes
+        if (ecranVictoire != null) ecranVictoire.SetActive(true);
+
         Invoke("RetourMap", 3f);
     }
 
-    // Appelé par la Roue quand c'est ROUGE
     public void Defaite()
     {
         if (jeuFini) return;
         jeuFini = true;
 
-        Debug.Log("PERDU (X) - 1 VIE");
+        Debug.Log("PERDU !");
 
-        // 1. PERTE DE VIE (Important !)
+        // Perdre vie
         vieJoueur--;
         PlayerPrefs.SetInt("VieJoueur", vieJoueur);
-        PlayerPrefs.Save(); // On sauvegarde la blessure
+        PlayerPrefs.Save();
 
-        // Mise à jour visuelle
         if (scriptUI != null) scriptUI.UpdateCoeurs(vieJoueur, 0);
-
-        // 2. Audio
-        if (musiqueDeFond != null) musiqueDeFond.Stop();
+        if (musiqueDeFond != null) musiqueDeFond.Stop(); // On coupe la musique un instant
         if (bruitagesSource != null && sonDefaite != null)
-        {
             bruitagesSource.PlayOneShot(sonDefaite);
-        }
 
-        // 3. Afficher "X"
         if (ecranDefaite != null) ecranDefaite.SetActive(true);
 
-        // 4. Gestion Game Over ou Retour Map
+        // --- CORRECTION ICI ---
         if (vieJoueur <= 0)
         {
-            Debug.Log("PLUS DE VIE -> GAME OVER");
-            // Ici tu pourrais rediriger vers une scène Game Over
-            // SceneManager.LoadScene("GameOver");
-            Invoke("RetourMap", 3f); // Pour l'instant on retourne à la map
+            // Plus de vie : On retourne à la map (Game Over)
+            Invoke("RetourMap", 3f);
         }
         else
         {
-            // Retour à la map sans valider le niveau (pour réessayer plus tard)
-            Invoke("RetourMap", 3f);
+            // Encore de la vie : On relance la roue après 2 secondes !
+            Invoke("SoftReset", 2f);
         }
     }
 
-    // TA FONCTION DE VALIDATION
+    // NOUVELLE FONCTION POUR RELANCER SANS CHARGER LA SCENE
+    void SoftReset()
+    {
+        jeuFini = false; // On débloque le jeu
+
+        // On cache l'écran "X"
+        if (ecranDefaite != null) ecranDefaite.SetActive(false);
+
+        // On remet la musique
+        if (musiqueDeFond != null) musiqueDeFond.Play();
+
+        // On dit à la roue de tourner à nouveau
+        if (scriptRoue != null)
+        {
+            scriptRoue.RelancerLaRoue();
+        }
+    }
+
     void CompleteCurrentLevel()
     {
-        // Récupère les infos stockées par le Map Manager avant d'entrer dans le niveau
         string currentID = PlayerPrefs.GetString("CurrentLevelID", "");
         int currentIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 0);
 
-        Debug.Log($"=== VICTOIRE niveau {currentIndex} (ID: {currentID}) ===");
-
-        // Marquer comme complété (2 = LevelState.Completed)
         if (!string.IsNullOrEmpty(currentID))
         {
             PlayerPrefs.SetInt($"Level_{currentID}", 2);
         }
 
-        // Sauvegarder pour dire à la Map : "Hey, je viens de finir celui-là, débloque le suivant !"
         PlayerPrefs.SetInt("JustCompletedLevel", currentIndex);
         PlayerPrefs.Save();
 
-        Debug.Log($"Niveau {currentIndex} complété !");
+        Debug.Log($"Niveau {currentIndex} validé !");
     }
 
     void RetourMap()
